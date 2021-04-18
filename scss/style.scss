@@ -34,6 +34,11 @@ article img {
     }
 }
 
+section p {
+    display: flex;
+    flex-direction: row;
+}
+
 footer {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.3rem;
