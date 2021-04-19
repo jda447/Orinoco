@@ -9958,9 +9958,8 @@ article img:hover {
   border: solid 2px #CCC;
 }
 
-section p {
-  display: flex;
-  flex-direction: row;
+p {
+  font-weight: 500;
 }
 
 footer {
