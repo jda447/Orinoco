@@ -18,4 +18,12 @@ let katatoneCamera = new camera ('5be9c4c71c9d440000a730e9', 'Katatone', '59900'
 //_id products array
 let cameraIds = ['5be1ed3f1c9d44000030b061', '5be1ef211c9d44000030b062', '5be9bc241c9d440000a730e7', 'be9c4471c9d440000a730e8', '5be9c4c71c9d440000a730e9'];
 
+const zurssButton = document.getElementById ('zurssButton');
 
+zurssButton.addEventListener ('click', () => {
+    zurssButton.classList.add('btn-primary');
+});
+
+function fun() {
+    alert ("Item added to cart!");
+ }
