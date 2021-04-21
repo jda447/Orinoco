@@ -1,29 +1,65 @@
-//Camera classes
+let cameras = {
+    _id: "5be1ed3f1c9d44000030b061",
+    name: "Zurss 50S",
+    price: 49900
+};
 
-class camera {
-    constructor (id, name, price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-    }
-}
+let cameras_serialized = JSON.stringify(cameras);
+console.log(cameras_serialized);
 
-let zurssCamera = new camera ('5be1ed3f1c9d44000030b061', 'Zurss 50S', '49900');
-let hirschCamera = new camera ('5be1ef211c9d44000030b062', 'Hirsch 400DTS', '309900');
-let franckCamera = new camera ('5be9bc241c9d440000a730e7', 'Franck JS 105', '209900');
-let kurosCamera = new camera ('5be9c4471c9d440000a730e8', 'Kuros TTS', '159900');
-let katatoneCamera = new camera ('5be9c4c71c9d440000a730e9', 'Katatone', '59900');
+localStorage.setItem("cameras", cameras_serialized);
 
+let cameras_deserialized = JSON.parse(localStorage.getItem("cameras"));
+console.log(cameras_deserialized);
 
-//_id products array
-let cameraIds = ['5be1ed3f1c9d44000030b061', '5be1ef211c9d44000030b062', '5be9bc241c9d440000a730e7', 'be9c4471c9d440000a730e8', '5be9c4c71c9d440000a730e9'];
+let cameraHirsch = {
+    _id: "5be1ef211c9d44000030b062",
+    name: "Hirsch 400DTS",
+    price: 309900
+};
 
-const zurssButton = document.getElementById ('zurssButton');
+let cameraHirsch_serialized = JSON.stringify(cameraHirsch);
 
-zurssButton.addEventListener ('click', () => {
-    zurssButton.classList.add('btn-primary');
-});
+localStorage.setItem("cameraHirsch", cameraHirsch_serialized);
 
-function fun() {
-    alert ("Item added to cart!");
- }
+let cameraHirsch_deserialized = JSON.parse(localStorage.getItem("cameraHirsch"));
+console.log(cameraHirsch_deserialized);
+
+let cameraFranck = {
+    _id: "5be9bc241c9d440000a730e7",
+    name: "Franck JS 105",
+    price: 209900
+};
+
+let cameraFranck_serialized = JSON.stringify(cameraFranck);
+
+localStorage.setItem("cameraFranck", cameraFranck_serialized);
+
+let cameraFranck_deserialized = JSON.parse(localStorage.getItem("cameraFranck"));
+console.log(cameraFranck_deserialized);
+
+let cameraKuros = {
+    _id: "5be9c4471c9d440000a730e8",
+    name: "Kuros TTS",
+    price: 159900
+};
+
+let cameraKuros_serialized = JSON.stringify(cameraKuros);
+
+localStorage.setItem("cameraKuros", cameraKuros_serialized);
+
+let cameraKuros_deserialized = JSON.parse(localStorage.getItem("cameraKuros"));
+console.log(cameraKuros_deserialized);
+
+let cameraKatatone = {
+    _id: "5be9c4c71c9d440000a730e9",
+    name: "Katatone",
+    price: 59900
+};
+
+let cameraKatatone_serialized = JSON.stringify(cameraKatatone);
+
+localStorage.setItem("cameraKatatone", cameraKatatone_serialized);
+
+let cameraKatatone_deserialized = JSON.parse(localStorage.getItem("cameraKatatone"));
+console.log(cameraKatatone_deserialized);
