@@ -63,3 +63,24 @@ localStorage.setItem("cameraKatatone", cameraKatatone_serialized);
 
 let cameraKatatone_deserialized = JSON.parse(localStorage.getItem("cameraKatatone"));
 console.log(cameraKatatone_deserialized);
+
+let userDetails = [];
+const addUserDetails = (ev) => {
+    ev.preventDefault();
+    let user = {
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        address: document.getElementById('address').value,
+        city: document.getElementById('city').value,
+        email: document.getElementById('email').value,
+    }
+    userDetails.push(user);
+    document.querySelector('form').reset();
+
+    console.warn('added', {userDetails});
+
+    localStorage.setItem('CustomerDetails', JSON.stringify(userDetails));
+}
+document.addEventListener ('DOMContentLoaded', () => {
+    document.getElementById ('formSubmit').addEventListener('click', addUserDetails);
+});
