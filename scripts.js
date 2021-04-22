@@ -5,7 +5,6 @@ let cameras = {
 };
 
 let cameras_serialized = JSON.stringify(cameras);
-console.log(cameras_serialized);
 
 localStorage.setItem("cameras", cameras_serialized);
 
