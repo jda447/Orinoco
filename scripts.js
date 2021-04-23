@@ -83,3 +83,10 @@ const addUserDetails = (ev) => {
 document.addEventListener ('DOMContentLoaded', () => {
     document.getElementById ('formSubmit').addEventListener('click', addUserDetails);
 });
+
+$(document).ready(function() {
+    $("article").toggle()
+    $("#productsButton").click(function () {
+        $("article").toggle()
+    });
+});
