@@ -1,3 +1,4 @@
+//Cameras 
 let cameras = {
     _id: "5be1ed3f1c9d44000030b061",
     name: "Zurss 50S",
@@ -63,6 +64,10 @@ localStorage.setItem("cameraKatatone", cameraKatatone_serialized);
 let cameraKatatone_deserialized = JSON.parse(localStorage.getItem("cameraKatatone"));
 console.log(cameraKatatone_deserialized);
 
+//end of cameras
+
+//Submit form
+
 let userDetails = [];
 const addUserDetails = (ev) => {
     ev.preventDefault();
@@ -84,9 +89,91 @@ document.addEventListener ('DOMContentLoaded', () => {
     document.getElementById ('formSubmit').addEventListener('click', addUserDetails);
 });
 
+//end of submit form
+
+
+
+//Camera button toggle
+
 $(document).ready(function() {
     $("article").toggle()
     $("#productsButton").click(function () {
         $("article").toggle()
     });
 });
+
+//Validation
+let firstName = document.getElementById('first-name');
+let lastName = document.getElementById('Last-name');
+let mailAddress = document.getElementById('E-mail');
+let address = document.getElementById('address');
+let city = document.getElementById('City');
+let invalidFeedback = document.querySelectorAll("p.invalid-feedback");
+let submitButton = document.getElementById('btnsubmit');
+// initialise Validation Boolean TO False
+let isFirstNameValid = false;
+let isLastNameValid = false;
+let isEmailValid = false;
+let isAddressValid = false;
+let isCityValid = false;
+
+//firstName Validation
+firstName.addEventListener('blur', () => {
+    const regName = /^[a-zA-Z]+$/;
+    if (!regName.test(firstName.value)) {
+      firstName.style.borderBottom = 'red solid 1px';
+      return false;
+    }
+    else {
+      firstName.style.borderBottom = 'green solid 1px';
+      isFirstNameValid = true;
+    }
+});
+  //lasName Validation
+lastName.addEventListener('blur', () => {
+    const regName = /^[a-zA-Z]+$/;
+    if (!regName.test(lastName.value)) {
+      lastName.style.borderBottom = 'red solid 1px';
+      return false;
+    }
+    else {
+      lastName.style.borderBottom = 'green solid 1px';
+      isLastNameValid = true;
+    }
+})
+  //mailAddress Validation
+mailAddress.addEventListener('blur', () => {
+    const regEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    if (!regEmail.test(mailAddress.value)) {
+      mailAddress.style.borderBottom = 'red solid 1px';
+      return false;
+    }
+    else {
+      mailAddress.style.borderBottom = 'green solid 1px';
+      isEmailValid = true;
+    }
+})
+//adress Validation
+address.addEventListener('blur', () => {
+    const regAddress = /^\s*\S+(?:\s+\S+){2}/;
+    if (!regAddress.test(address.value)) {
+      address.style.borderBottom = 'red solid 1px';
+      return false;
+    }
+    else {
+      address.style.borderBottom = 'green solid 1px';
+      isAddressValid = true;
+    }
+})
+//city Validation
+city.addEventListener('blur', () => {
+    const regName = /^[a-zA-Z]+$/;
+    if (!regName.test(city.value)) {
+      city.style.borderBottom = 'red solid 1px';
+      return false;
+    }
+    else {
+      city.style.borderBottom = 'green solid 1px';
+      isCityValid = true;
+    }
+})

@@ -22,6 +22,8 @@
                     </ul>
                     <ul class="navbar-nav ml-auto pr-md-5">
                       <a class="nav-link text-light" href="index.html">Home</a>
+                      <a class="nav-link text-light" href="basket-page.html">Basket<i class="fas fa-shopping-basket px-2"></i>
+                      <span class="cartNum" id="cartNum">0</span></a>
                     </ul>
                   </nav>
                 </div>
@@ -37,13 +39,18 @@
         <article>
           <div class="container-fluid">
             <div class="row">
-              <div class="col-6 mx-5 pb-4">
-                Cart total goes here!
+              <div class="container" id="container">
+                <h1>Shopping Cart</h1>
+                <table id="cart_items">
+                </table>
+                <div class="total">
+                  <p>Total Amount </p>
+                  <p class="total-price" id="total"> 0$</p>
               </div>
-            <form>
+            <form class="row">
             <div class="container-fluid">
               <div class="row">
-                <div class="col pb-4">
+                <div class="col col-md-6 col-lg-4 pb-4">
               <div class="col">
                 <label for="firstName" class="form-label">First name</label>
                 <input type="text" class="form-control" id="firstName" name="first-name" required placeholder="Your first name">
