@@ -9984,8 +9984,15 @@ footer {
 
 .checkout ul li {
   list-style: none;
-  font-size: 2rem;
   overflow: hidden;
+}
+
+.subtotal {
+  font-size: 1.5rem;
+}
+
+.cart-total {
+  font-size: 2.7rem;
 }
 
 /*# sourceMappingURL=style.css.map */
