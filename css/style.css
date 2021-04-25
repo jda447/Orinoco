@@ -9972,4 +9972,20 @@ footer {
   font-size: 0.3rem;
 }
 
+.cart .table tbody tr td .counter input {
+  outline: none;
+  box-shadow: none;
+}
+
+.checkout ul {
+  border: 2px solid #ebebeb;
+  background: #f3f3f3;
+}
+
+.checkout ul li {
+  list-style: none;
+  font-size: 2rem;
+  overflow: hidden;
+}
+
 /*# sourceMappingURL=style.css.map */
