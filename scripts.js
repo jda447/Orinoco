@@ -144,5 +144,3 @@ document.getElementById ('formSubmit').addEventListener('click', addUserDetails)
 });
 
 //end of Submit form localStorage log
-
-
