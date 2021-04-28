@@ -100,7 +100,27 @@ function updateCartTotal() {
 //end of Cart sums
 
 
-//Submit form
+//Camera localStorage log
+
+let cameraId = [];
+const addCameraId = (ev) => {
+    ev.preventDefault();
+    let cam = {
+        _id: document.getElementById('5be1ed3f1c9d44000030b061')
+    }
+    cameraId.push(cam);
+    console.log('added', {cameraId});
+
+    localStorage.setItem('CameraIdString', JSON.stringify(cameraId));
+}
+document.addEventListener ('DOMContentLoaded', () => {
+document.getElementById ('formSubmit').addEventListener('click', addCameraId);
+});
+
+//end of Camera localStorage log
+
+
+//Submit form localStorage log
 
 let userDetails = [];
 const addUserDetails = (ev) => {
@@ -115,7 +135,7 @@ const addUserDetails = (ev) => {
     userDetails.push(user);
     document.querySelector('form').reset();
 
-    console.warn('added', {userDetails});
+    console.log('added', {userDetails});
 
     localStorage.setItem('CustomerDetails', JSON.stringify(userDetails));
 }
@@ -123,5 +143,6 @@ document.addEventListener ('DOMContentLoaded', () => {
 document.getElementById ('formSubmit').addEventListener('click', addUserDetails);
 });
 
-//end of submit form
+//end of Submit form localStorage log
+
 
