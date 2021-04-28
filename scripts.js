@@ -1,4 +1,5 @@
 
+
 //Cart sums
 
 if (document.readyState == 'loading') {
@@ -61,17 +62,10 @@ function addToCartClicked(event) {
     updateCartTotal()
 }
 
-function addItemToCart(title, price, imageSrc) {
+function addItemToCart(title, price,) {
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
     var cartItems = document.getElementsByClassName('cart-items')[0]
-    var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
-    for (var i = 0; i < cartItemNames.length; i++) {
-        if (cartItemNames[i].innerText == title) {
-            alert('This item is already added to the cart')
-            return
-        }
-    }
     var cartRowContents = `
         <div class="cart-item cart-column">
             <span class="cart-item-title">${title}</span>
@@ -103,6 +97,8 @@ function updateCartTotal() {
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
 
+//end of Cart sums
+
 
 //Submit form
 
@@ -124,7 +120,7 @@ const addUserDetails = (ev) => {
     localStorage.setItem('CustomerDetails', JSON.stringify(userDetails));
 }
 document.addEventListener ('DOMContentLoaded', () => {
-    document.getElementById ('formSubmit').addEventListener('click', addUserDetails);
+document.getElementById ('formSubmit').addEventListener('click', addUserDetails);
 });
 
 //end of submit form
