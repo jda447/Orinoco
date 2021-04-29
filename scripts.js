@@ -106,7 +106,7 @@ let cameraId = [];
 const addCameraId = (ev) => {
     ev.preventDefault();
     let cam = {
-        _id: document.getElementById('5be1ed3f1c9d44000030b061')
+        addToCart: document.getElementsByClassName('addToCart')
     }
     cameraId.push(cam);
     console.log('added', {cameraId});
@@ -114,8 +114,10 @@ const addCameraId = (ev) => {
     localStorage.setItem('CameraIdString', JSON.stringify(cameraId));
 }
 document.addEventListener ('DOMContentLoaded', () => {
-document.getElementById ('formSubmit').addEventListener('click', addCameraId);
+document.getElementById ('addToCart').addEventListener('click', addCameraId);
 });
+
+
 
 //end of Camera localStorage log
 
