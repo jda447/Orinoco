@@ -146,3 +146,11 @@ document.getElementById ('formSubmit').addEventListener('click', addUserDetails)
 });
 
 //end of Submit form localStorage log
+
+
+$(document).ready(function() {
+    $("article").toggle()
+    $("#productsButton").click(function () {
+        $("article").toggle()
+    });
+});
