@@ -154,3 +154,7 @@ $(document).ready(function() {
         $("article").toggle()
     });
 });
+
+function alertmsg() {
+    alert ("Camera added to cart!");
+}
