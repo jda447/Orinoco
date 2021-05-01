@@ -1,5 +1,6 @@
 //Camera localStorage log
 
+
 let cameraId = [];
 const addCameraId = (ev) => {
     ev.preventDefault();
@@ -60,3 +61,4 @@ function alertmsg() {
 $(document).ready(function() {
     $("#basic-form").validate();
     });
+
