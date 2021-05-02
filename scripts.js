@@ -1,22 +1,29 @@
 //Camera localStorage log
 
 
-let cameraId = [];
-const addCameraId = (ev) => {
-    ev.preventDefault();
-    let cam = {
-        addToCart: document.getElementsByClassName('addToCart')
-    }
-    cameraId.push(cam);
-    console.log('added', {cameraId});
+let cameras = {
+    _id:"5be1ed3f1c9d44000030b061",
+    name: "Zurss 50S",
+    price: 49900,
+}
 
-    localStorage.setItem('CameraIdString', JSON.stringify(cameraId));
+let zurssCamera = [];
+const addZurssCamera = (ev) => {
+    ev.preventDefault();
+    let camera = {
+        _id:"5be1ed3f1c9d44000030b061",
+        name: "Zurss 50S",
+        price: 49900,
+    }
+    zurssCamera.push(camera);
+
+    console.log('added', {zurssCamera});
+
+    localStorage.setItem('ZurssCamera', JSON.stringify(zurssCamera));
 }
 document.addEventListener ('DOMContentLoaded', () => {
-document.getElementById ('addToCart').addEventListener('click', addCameraId);
+document.getElementById ('zurssButton').addEventListener('click', addZurssCamera);
 });
-
-
 
 //end of Camera localStorage log
 
