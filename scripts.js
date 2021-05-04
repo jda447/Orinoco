@@ -53,19 +53,3 @@ document.getElementById ('formSubmit').addEventListener('click', addUserDetails)
 
 //end of Submit form localStorage log
 
-
-$(document).ready(function() {
-    $("article").toggle()
-    $("#productsButton").click(function () {
-        $("article").toggle()
-    });
-});
-
-function alertmsg() {
-    alert ("Camera added to cart!");
-}
-
-$(document).ready(function() {
-    $("#basic-form").validate();
-    });
-
