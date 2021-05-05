@@ -53,3 +53,11 @@ document.getElementById ('formSubmit').addEventListener('click', addUserDetails)
 
 //end of Submit form localStorage log
 
+
+function validateFirstName() {
+    var x = document.forms["myForm"]["firstName"].value;
+    if (x == "") {
+      alert("Name must be filled out");
+      return false;
+    }
+  }
