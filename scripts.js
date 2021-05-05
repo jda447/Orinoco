@@ -48,16 +48,51 @@ const addUserDetails = (ev) => {
     localStorage.setItem('CustomerDetails', JSON.stringify(userDetails));
 }
 document.addEventListener ('DOMContentLoaded', () => {
-document.getElementById ('formSubmit').addEventListener('click', addUserDetails);
+document.getElementsByClassName ('btnSuccess').addEventListener('click', addUserDetails);
 });
 
 //end of Submit form localStorage log
 
 
-function validateFirstName() {
-    var x = document.forms["myForm"]["firstName"].value;
-    if (x == "") {
-      alert("Name must be filled out");
-      return false;
+function validate() {
+      
+    if( document.myForm.firstName.value == "" ) {
+       alert( "Please provide your first name!" );
+       document.myForm.firstName.focus() ;
+       return false;
     }
-  }
+    if( document.myForm.lastName.value == "" ) {
+        alert( "Please provide your last name!" );
+        document.myForm.lastName.focus() ;
+        return false;
+    }
+    if( document.myForm.address.value == "" ) {
+        alert( "Please provide your address!" );
+        document.myForm.address.focus() ;
+        return false;
+    }
+    if( document.myForm.city.value == "" ) {
+        alert( "Please provide your city!" );
+        document.myForm.city.focus() ;
+        return false;
+    }
+    if( document.myForm.email.value == "" ) {
+        alert( "Please provide your Email!" );
+        document.myForm.email.focus() ;
+        return false;
+     }
+    function validateEmail() {
+        var emailID = document.myForm.email.value;
+        atpos = emailID.indexOf("@");
+        dotpos = emailID.lastIndexOf(".");
+        
+        if (atpos < 1 || ( dotpos - atpos < 2 )) {
+           alert("Please enter correct email ID")
+           document.myForm.EMail.focus() ;
+           return false;
+        }
+        return( true );
+     }
+    return( true );
+}
+

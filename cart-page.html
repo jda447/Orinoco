@@ -38,22 +38,34 @@
           </span>
           </div>
         </header>
-          <div class="container col-2">
-            <div class="row">
-              <form>
-                First Name:<input type="text" id="firstName" required>
-              <form>
-                Last Name:<input type="text" id="lastName" required>
-              <form>
-                Address:<input type="text" id="address" required>
-              <form>
-                City:<input type="text" id="city" required>
-              <form>
-                Email:<input type="text" name="email" id="email" required>
-                <button type="submit" id="formSubmit" class="btn btn-success my-3">PURCHASE</button>
-              </form>
-            </div>
-          </div>
+        <form action = "#" name = "myForm" onsubmit = "return(validate());">
+          <table cellspacing = "2" cellpadding = "2">
+             <tr>
+                <td align = "right">First Name</td>
+                <td><input type = "text" name = "firstName" id="firstName" /></td>
+             </tr>
+             <tr>
+              <td align = "right">Last Name</td>
+              <td><input type = "text" name = "lastName" id="lastName"/></td>
+             </tr>
+             <tr>
+              <td align = "right">Address</td>
+              <td><input type = "text" name = "address" id="address"/></td>
+             </tr>
+             <tr>
+              <td align = "right">City</td>
+              <td><input type = "text" name = "city" id="city"/></td>
+             </tr>
+             <tr>
+                <td align = "right">Email</td>
+                <td><input type = "email" name = "Email" id="email"/></td>
+             </tr>
+             <tr>
+                <td align = "right"></td>
+                <td><input type = "submit" value = "Submit" /></td>
+             </tr>
+          </table>
+       </form>      
         <footer class="bg-dark text-center text-white">
             <div class="footer-text pt-2">
             <h3>Orinoco</h3>
