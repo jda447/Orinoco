@@ -48,7 +48,7 @@ const addUserDetails = (ev) => {
     localStorage.setItem('CustomerDetails', JSON.stringify(userDetails));
 }
 document.addEventListener ('DOMContentLoaded', () => {
-document.getElementsByClassName ('btnSuccess').addEventListener('click', addUserDetails);
+document.getElementsByTagName ('submit').addEventListener('click', addUserDetails);
 });
 
 //end of Submit form localStorage log
@@ -96,3 +96,12 @@ function validate() {
     return( true );
 }
 
+
+function toggleCameras() {
+    var x = document.getElementById("hiddenCameras");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
