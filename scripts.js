@@ -1,3 +1,14 @@
+function toggleCameras() {
+    var x = document.getElementById("hiddenCameras");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+}
+
+//Form validation
+
 function validate() {
       
     if( document.myForm.firstName.value == "" ) {
@@ -40,15 +51,35 @@ function validate() {
     return( true );
 }
 
+//end of Form validation
 
-function toggleCameras() {
-    var x = document.getElementById("hiddenCameras");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
+
+
+//Submit form localStorage log
+
+let userDetails = [];
+const addUserDetails = (ev) => {
+    ev.preventDefault();
+    let user = {
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        address: document.getElementById('address').value,
+        city: document.getElementById('city').value,
+        email: document.getElementById('email').value,
     }
+    userDetails.push(user);
+    document.querySelector('form').reset();
+
+    console.log('added', {userDetails});
+
+    localStorage.setItem('CustomerDetails', JSON.stringify(userDetails));
 }
+document.addEventListener ('DOMContentLoaded', () => {
+document.getElementById ('formSubmit').addEventListener('click', addUserDetails);
+});
+
+//end of Submit form localStorage log
+
 
 function myFunction() {
     alert("Camera added to cart!");
