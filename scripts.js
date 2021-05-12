@@ -102,6 +102,8 @@ const addZurssCamera = (ev) => {
 }
 document.addEventListener ('DOMContentLoaded', () => {
 document.getElementById ('zurssButton').addEventListener('click', addZurssCamera);
+
+console.log(localStorage.getItem('Zurss 50S'));
 });
 
 let hirschCamera = [];
