@@ -38,34 +38,30 @@
           </span>
           </div>
         </header>
-        <form action = "#" name = "myForm" onsubmit = "return(validate());">
-          <table cellspacing = "2" cellpadding = "2">
-             <tr>
-                <td align = "right">First Name</td>
-                <td><input type = "text" name = "firstName" id="firstName" /></td>
-             </tr>
-             <tr>
-              <td align = "right">Last Name</td>
-              <td><input type = "text" name = "lastName" id="lastName"/></td>
-             </tr>
-             <tr>
-              <td align = "right">Address</td>
-              <td><input type = "text" name = "address" id="address"/></td>
-             </tr>
-             <tr>
-              <td align = "right">City</td>
-              <td><input type = "text" name = "city" id="city"/></td>
-             </tr>
-             <tr>
-                <td align = "right">Email</td>
-                <td><input type = "email" name = "Email" id="email"/></td>
-             </tr>
-             <tr>
-                <td align = "right"></td>
-                <td><input type = "submit" value = "Submit" id="formSubmit" /></td>
-             </tr>
-          </table>
-       </form>      
+        <form>
+          <div class="form-group col-3">
+            <label for="firstName">First name</label>
+            <input type="text" class="form-control" id="firstName" aria-describedby="firstName" placeholder="Enter first name">
+          </div>
+          <div class="form-group col-3">
+            <label for="lastName">Last name</label>
+            <input type="text" class="form-control" id="lastName" aria-describedby="lastName" placeholder="Enter last name">
+          </div>
+          <div class="form-group col-3">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" aria-describedby="address" placeholder="Enter address">
+          </div>
+          <div class="form-group col-3">
+            <label for="address">City</label>
+            <input type="text" class="form-control" id="city" aria-describedby="city" placeholder="Enter city">
+          </div>
+          <div class="form-group col-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <button type="submit" class="btn btn-secondary col-1 mx-3 mb-3" id="formSubmit">Submit</button>
+        </form>
         <footer class="bg-dark text-center text-white">
             <div class="footer-text pt-2">
             <h3>Orinoco</h3>
