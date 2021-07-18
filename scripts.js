@@ -1,4 +1,5 @@
+const uri = 'http://localhost:3000/api/cameras/';
 
-// SELECTORS
-let productsContainer = document.getElementById('products');
-let url = 'https://orinoco-op.herokuapp.com/api/cameras';
+fetch (uri)
+    .then((response) => response.json())
+    .then((data) => console.log(data));
