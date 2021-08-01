@@ -1,4 +1,10 @@
+
 //const productsContainer = document.getElementById('products');
+
+let productsContainer = document.getElementById('products');
+const uri = 'https://orinoco-op.herokuapp.com/api/cameras';
+let formSubmit = document.getElementById('formSubmit');
+
 
 //const uri = 'https://orinoco-op.herokuapp.com/api/cameras';
 
@@ -94,71 +100,42 @@ async function displayAllProducts() {
 
 /*fetch (uri)
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => createCards(data));
 
 
-let userDetails = [];
-    const addUserDetails = (ev) => {
-    ev.preventDefault();
-    let user = {
-        firstName: document.getElementById('firstName').value,
-        lastName: document.getElementById('lastName').value,
-        address: document.getElementById('address').value,
-        city: document.getElementById('city').value,
-        email: document.getElementById('email').value,
+function createCards(array) {
+    const container = document.getElementById('container');
+    const length = array.length;
+
+    for (let i=0; i<length; i++) {
+        const card = createCard(array[i]);
+        container.appendChild(card);
     }
-    userDetails.push(user);
-    document.querySelector('form').reset();
+}
 
-    console.log('added', {userDetails});
+function createCard(obj) {
+    const card = document.createElement('section');
 
     localStorage.setItem('CustomerDetails', JSON.stringify(userDetails));
 }
 document.addEventListener ('DOMContentLoaded', () => {
 document.getElementById ('formSubmit').addEventListener('click', addUserDetails);
 });*/
+    const name = document.createElement('heading');
+    const price = document.createElement('p');
+    const img = document.createElement('img');
 
 
+    card.classList.add('card');
 
-function validate() {
-      
-    if( document.myForm.firstName.value == "" ) {
-       alert( "Please provide your first name!" );
-       document.myForm.firstName.focus() ;
-       return false;
-    }
-    if( document.myForm.lastName.value == "" ) {
-        alert( "Please provide your last name!" );
-        document.myForm.lastName.focus() ;
-        return false;
-    }
-    if( document.myForm.address.value == "" ) {
-        alert( "Please provide your address!" );
-        document.myForm.address.focus() ;
-        return false;
-    }
-    if( document.myForm.city.value == "" ) {
-        alert( "Please provide your city!" );
-        document.myForm.city.focus() ;
-        return false;
-    }
-    if( document.myForm.email.value == "" ) {
-        alert( "Please provide your Email!" );
-        document.myForm.email.focus() ;
-        return false;
-     }
-    function validateEmail() {
-        var emailID = document.myForm.email.value;
-        atpos = emailID.indexOf("@");
-        dotpos = emailID.lastIndexOf(".");
-        
-        if (atpos < 1 || ( dotpos - atpos < 2 )) {
-           alert("Please enter correct email ID")
-           document.myForm.EMail.focus() ;
-           return false;
-        }
-        return( true );
-     }
-    return( true );
+    name.innerHTML = obj.name;
+    price.innerHTML = obj.price;
+
+    img.setAttribute('src', obj.imageURL);
+
+    card.appendChild(img);
+    card.appendChild(name);
+    card.appendChild(price);
+
+    return card;
 }
-
