@@ -23,17 +23,20 @@ function createCard(obj) {
     const name = document.createElement('heading');
     const price = document.createElement('p');
     const img = document.createElement('img');
+    const description = document.createElement('description');
 
     card.classList.add('card');
 
     name.innerHTML = obj.name;
     price.innerHTML = obj.price;
+    description.innerHTML = obj.description;
 
     img.setAttribute('src', obj.imageUrl);
 
     card.appendChild(img);
     card.appendChild(name);
     card.appendChild(price);
+    card.appendChild(description);
 
     return card;
 }
