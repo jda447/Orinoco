@@ -1,8 +1,8 @@
 let productsContainer = document.getElementById('products');
-const uri = 'https://orinoco-op.herokuapp.com/api/cameras';
+const url = 'https://orinoco-op.herokuapp.com/api/cameras';
 let formSubmit = document.getElementById('formSubmit');
 
-fetch (uri)
+fetch (url)
     .then((response) => response.json())
     .then((data) => createCards(data));
 
