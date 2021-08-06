@@ -29,7 +29,7 @@ function createCard(obj) {
     name.innerHTML = obj.name;
     price.innerHTML = obj.price;
 
-    img.setAttribute('src', obj.imageURL);
+    img.setAttribute('src', obj.imageUrl);
 
     card.appendChild(img);
     card.appendChild(name);
