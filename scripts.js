@@ -34,8 +34,17 @@ function createCard(obj) {
     img.setAttribute('src', obj.imageUrl);
 
     name.style.fontSize = "1.6rem";
+    name.style.marginTop = "0.4rem";
+    name.style.marginLeft = "1rem";
     price.style.fontSize = "1.2rem";
+    price.style.marginTop = "0.4rem";
+    price.style.marginLeft = "1rem";
     description.style.fontSize = "1.2rem";
+    description.style.marginTop = "-0.4rem";
+    description.style.marginBottom = "2rem";
+    description.style.marginLeft = "1rem";
+
+    price.style.fontWeight = "bold";
 
     card.appendChild(img);
     card.appendChild(name);
