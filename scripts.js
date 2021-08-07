@@ -42,7 +42,7 @@ function createCard(obj) {
     price.style.marginLeft = "1rem";
     price.style.fontWeight = "bold";
 
-    description.style.fontSize = "1.2rem";
+    description.style.fontSize = "1rem";
     description.style.marginTop = "-0.4rem";
     description.style.marginBottom = "2rem";
     description.style.marginLeft = "1rem";
