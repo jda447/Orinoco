@@ -33,6 +33,10 @@ function createCard(obj) {
 
     img.setAttribute('src', obj.imageUrl);
 
+    name.style.fontSize = "1.6rem";
+    price.style.fontSize = "1.2rem";
+    description.style.fontSize = "1.2rem";
+
     card.appendChild(img);
     card.appendChild(name);
     card.appendChild(price);
