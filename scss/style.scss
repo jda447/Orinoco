@@ -32,7 +32,7 @@ h3 {
 }
 
 
-article img {
+section img {
     &:hover {
         transform: scale(1.04);
         transition: transform 600ms;
@@ -47,6 +47,11 @@ p {
 #productsButton {
     border-radius: 50%;
     width: 50%;
+}
+
+#topButton {
+    border-radius: 50%;
+    width: 50%;   
 }
 
 footer {

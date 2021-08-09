@@ -33,13 +33,13 @@ function createCard(obj) {
     const img = document.createElement('img');
     const description = document.createElement('description');
 
-    //const link =document.createElement('a');
+    const link = document.createElement('product');
 
     //let anotherLink = './product.html?=_id' + obj._id;
 
     //or
     
-    //link.setAttribute('href', `${singleLink}${obj._id}`);
+    link.setAttribute('href', `${singleLink}${obj._id}`);
 
     card.classList.add('card');
 
