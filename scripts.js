@@ -5,6 +5,12 @@
 let productsContainer = document.getElementById('products');
 const url = 'https://orinoco-op.herokuapp.com/api/cameras';
 
+const singleLink = './product.html?=_id';
+
+//./product.html?=_id
+
+
+
 fetch (url)
     .then((response) => response.json())
     .then((data) => createCards(data));
@@ -26,6 +32,14 @@ function createCard(obj) {
     let price = document.createElement('price');
     const img = document.createElement('img');
     const description = document.createElement('description');
+
+    //const link =document.createElement('a');
+
+    //let anotherLink = './product.html?=_id' + obj._id;
+
+    //or
+    
+    //link.setAttribute('href', `${singleLink}${obj._id}`);
 
     card.classList.add('card');
 
