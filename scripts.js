@@ -23,14 +23,14 @@ function createCard(obj) {
     const card = document.createElement('section');
 
     const name = document.createElement('heading');
-    const price = document.createElement('p');
+    let price = document.createElement('p');
     const img = document.createElement('img');
     const description = document.createElement('description');
 
     card.classList.add('card');
 
     name.innerHTML = obj.name;
-    price.innerHTML = obj.price;
+    price.innerHTML = obj.price.toFixed(2) / 100;
     description.innerHTML = obj.description;
 
     img.setAttribute('src', obj.imageUrl);
