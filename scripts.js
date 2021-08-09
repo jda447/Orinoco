@@ -30,7 +30,7 @@ function createCard(obj) {
     card.classList.add('card');
 
     name.innerHTML = obj.name;
-    price.innerHTML = obj.price.toFixed(2) / 100;
+    price.innerHTML = "$" + obj.price.toFixed(2) / 100;
     description.innerHTML = obj.description;
 
     img.setAttribute('src', obj.imageUrl);
