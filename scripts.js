@@ -22,8 +22,8 @@ function createCards(array) {
 function createCard(obj) {
     const card = document.createElement('section');
 
-    const name = document.createElement('heading');
-    let price = document.createElement('p');
+    const name = document.createElement('cameraName');
+    let price = document.createElement('price');
     const img = document.createElement('img');
     const description = document.createElement('description');
 
