@@ -58,3 +58,14 @@ function createCard(obj) {
 
     return card;
 }
+
+
+let hidden = false;
+function toggleCameras() {
+    hidden = !hidden;
+    if(hidden) {
+        document.getElementById('container').style.visibility = 'hidden';
+    } else {
+        document.getElementById('container').style.visibility = 'visible';
+    }
+}
