@@ -1,6 +1,9 @@
+"use strict";
+//Strict mode makes it easier to write "secure" JavaScript.
+//In strict mode, any assignment to a non-writable property, a getter-only property, a non-existing property, a non-existing variable, or a non-existing object, will throw an error.
+
 let productsContainer = document.getElementById('products');
 const url = 'https://orinoco-op.herokuapp.com/api/cameras';
-let formSubmit = document.getElementById('formSubmit');
 
 fetch (url)
     .then((response) => response.json())
@@ -9,9 +12,8 @@ fetch (url)
 
 function createCards(array) {
     const container = document.getElementById('container');
-    const length = array.length;
 
-    for (let i=0; i<length; i++) {
+    for (let i in array) {
         const card = createCard(array[i]);
         container.appendChild(card);
     }
