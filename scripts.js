@@ -29,17 +29,17 @@ function createCard(obj) {
     const card = document.createElement('section');
 
     const name = document.createElement('cameraName');
-    let price = document.createElement('price');
+    const price = document.createElement('price');
     const img = document.createElement('img');
     const description = document.createElement('description');
 
-    const link = document.createElement('product');
+    //const link = document.createElement('product');
 
     //let anotherLink = './product.html?=_id' + obj._id;
 
     //or
     
-    link.setAttribute('href', `${singleLink}${obj._id}`);
+    //link.setAttribute('href', `${singleLink}${obj._id}`);
 
     card.classList.add('card');
 
