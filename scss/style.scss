@@ -31,15 +31,6 @@ h3 {
     font-size: 2rem;
 }
 
-
-section img {
-    &:hover {
-        transform: scale(1.04);
-        transition: transform 600ms;
-        border: solid 2px #CCC;
-    }
-}
-
 p {
     font-weight: 500;
 }
@@ -72,5 +63,10 @@ footer {
     justify-content: flex-end;
 }
 
-//JS
+//Products//
+
+
+.products {
+    
+}
 
