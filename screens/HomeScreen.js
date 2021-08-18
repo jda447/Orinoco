@@ -1,8 +1,16 @@
-import data from '../controllers/camera'
+import data from '../camera'
 
 const camera = {
-    render: () => {
-    const { products } = data;
+    render: async () => {
+    const response = await fetch('https://orinoco-op.herokuapp.com/api/cameras', {
+        headers: {
+            'Content-Type': 'application/json',
+    },
+});
+if(!response || !response.ok) {
+    return `<div>Error in getting data</div>`;
+    }
+    const products = await response.json();
         return `
         <ul class = "products">
         ${products.map( 
