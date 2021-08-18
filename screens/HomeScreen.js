@@ -1,4 +1,4 @@
-import data from '../models/Camera.js'
+import data from '../controllers/camera'
 
 const camera = {
     render: () => {
