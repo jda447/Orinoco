@@ -1,3 +1,5 @@
+import data from '../models\Camera.js'
+
 const camera = {
     render: () => {
     const { products } = data;
@@ -21,9 +23,10 @@ const camera = {
                     </a>
             </div>
         </li>
-        `)}
+        `
+        )}
         `
     }
 }
 
-export default camera;
+export default HomeScreen;
