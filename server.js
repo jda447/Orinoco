@@ -1,31 +1,10 @@
-import data from '../models\Camera.js'
+const express = require('express');
+const router = express.Router();
 
+const cameraCtrl = require('../controllers/camera');
 
-const server = {
-    render: () => {
-    const { products } = data;
-        return `
-        <ul class = "products">
-        ${products.map( product => `
-        <li>
-            <div class="product">
-                <a href="/#/product/1${product._id}">
-                    <img src="${product.image}" alt="${product.name}" />
-                    <div class="product-name">
-                    ${product.name}
-                    </div>
-                      <div class="price">
-                        ${product.price}
-                    </div>
-                    <div class="description">
-                      ${product.description}
-                    </div>
-                    </a>
-            </div>
-        </li>
-        `)}
-        `
-    }
-}
+router.get('/', cameraCtrl.getAllCameras);
+router.get('/:id', cameraCtrl.getOneCamera);
+router.post('/order', cameraCtrl.orderCameras);
 
-export default server;
+module.exports = router;
