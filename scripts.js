@@ -18,7 +18,7 @@ async function displayCameras() {
         <img src="${camera.imageUrl}" class="col">
         <h4>${camera.name}</h4>
         <span>${camera.description}</span> 
-        <p class="price">${camera.price.toFixed(2) / 100}</p>
+        <p class="price">$${camera.price.toFixed(2)/100}</p>
         </div>
         </div>`;
 
