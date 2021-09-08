@@ -17,8 +17,8 @@ async function displayCameras() {
         <div class="card img-fluid col-4 p-2 m-4">
         <img src="${camera.imageUrl}" class="col">
         <h4>${camera.name}</h4>
-        <p>${camera.description}</p> 
-        <span class="price">${camera.price}</span>
+        <span>${camera.description}</span> 
+        <p class="price">${camera.price.toFixed(2) / 100}</p>
         </div>
         </div>`;
 
