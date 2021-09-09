@@ -22,7 +22,6 @@ async function displayCameras() {
         <p class="price">$${camera.price.toFixed(2)/100}</p>
         </a>
         </div>
-        </div>
         `;
 
         html += htmlSegment;
