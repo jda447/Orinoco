@@ -16,7 +16,7 @@ async function displayCameras() {
         let htmlSegment = `
             <a href="product.html?id=${camera._id}">
                 <div class="camera">
-                <div class="card img-fluid col-4 p-2 m-4">
+                <div class="card-columns border img-fluid col-12 p-2 m-4">
                     <img src="${camera.imageUrl}" class="col">
                     <h4>${camera.name}</h4>
                     <span>${camera.description}</span> 
