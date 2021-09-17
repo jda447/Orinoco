@@ -14,14 +14,15 @@ async function displayCameras() {
     let html = '';
     cameras.forEach(camera => {
         let htmlSegment = `
-            <a href="product.html?id=${camera._id}">
-                <div class="camera">
-                <div class="card-columns border img-fluid col-12 p-2 m-4">
-                    <img src="${camera.imageUrl}" class="col">
-                    <h4>${camera.name}</h4>
-                    <span>${camera.description}</span> 
-                    <p class="price">$${camera.price.toFixed(2)/100}</p>
-            </a>
+        <div class="card p-2 m-5" style="width: 18rem;">
+        <a href="product.html?id=${camera._id}">
+            <img class="card-img-top" src="${camera.imageUrl}" class="col" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">${camera.name}</h5>
+                <p class="card-title">${camera.description}</p>
+                <p class="price">$${camera.price.toFixed(2)/100}</p>
+            </div>
+        </a>
         </div>
         `;
 
