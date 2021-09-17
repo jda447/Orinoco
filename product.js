@@ -37,3 +37,13 @@ function singleProduct(data) {
     name.appendChild(cameraName);
 
 }
+
+/*  let newArticle = document.createElement('article');
+    let newName = document.createElement('h3');
+    
+    newName.textContent = data.name;
+    newArticle.appendChild(newName);
+
+    const main = document.querySelector('container');
+    main.appendChild(newName);
+*/
