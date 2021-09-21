@@ -15,11 +15,7 @@ function getProductId() {
 function getSingleProductId(id) {
     fetch('http://localhost:3000/api/cameras' + id)
     .then((response) => {
-      if (response.ok) {
         return response.json();
-      } else {
-        throw new Error("NETWORK RESPONSE ERROR");
-      }
     })
     .then(data => {
       product = data;
