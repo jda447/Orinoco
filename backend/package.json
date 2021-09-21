@@ -1,37 +1,16 @@
 {
   "name": "orinoco-backend",
   "version": "1.0.0",
-  "description": "This is the back end server for Project 5 of the Junior Web Developer path.",
+  "description": "",
   "main": "server.js",
   "scripts": {
-    "sass": "sass --watch ./node_modules/bootstrap/scss/style.scss:./css/style.css",
-    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.0.2",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "express-myconnection": "^1.0.4",
-    "morgan": "^1.10.0",
-    "mysql": "^2.18.1",
-    "node": "^16.4.0",
-    "node-localstorage": "^2.2.1",
-    "sass": "^1.35.1",
+    "express": "^4.16.4",
     "uuid": "^3.3.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.7"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jda447/Orinoco.git"
-  },
-  "keywords": [],
-  "bugs": {
-    "url": "https://github.com/jda447/Orinoco/issues"
-  },
-  "homepage": "https://github.com/jda447/Orinoco#readme"
+  }
 }

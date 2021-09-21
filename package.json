@@ -1,0 +1,23 @@
+{
+  "name": "orinoco",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/style.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jda447/Orinoco.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jda447/Orinoco/issues"
+  },
+  "homepage": "https://github.com/jda447/Orinoco#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.1",
+    "node-sass": "^6.0.1"
+  }
+}
