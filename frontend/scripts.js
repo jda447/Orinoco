@@ -19,8 +19,8 @@ async function displayCameras() {
             <img class="card-img-top" src="${camera.imageUrl}" class="col" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">${camera.name}</h5>
-                <p class="card-title">${camera.description}</p>
                 <p class="price">$${camera.price.toFixed(2)/100}</p>
+                <p class="card-title">${camera.description}</p>
             </div>
         </a>
         </div>
