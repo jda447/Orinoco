@@ -1,5 +1,5 @@
 async function getCameras() {
-    const url = 'https://orinoco-op.herokuapp.com/api/cameras';
+    const url = 'http://localhost:3000/api/cameras';
     try {
         let res = await fetch(url);
         return await res.json();

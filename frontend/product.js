@@ -13,7 +13,7 @@ function getProductId() {
 }
 
 function getSingleProductId(id) {
-    fetch('https://orinoco-op.herokuapp.com/api/cameras/' + id)
+    fetch('http://localhost:3000/api/cameras' + id)
     .then((response) => {
       if (response.ok) {
         return response.json();
