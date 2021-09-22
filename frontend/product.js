@@ -39,6 +39,11 @@ function showProduct(data) {
     let cameraPrice = document.createElement('p');
     cameraPrice.innerHTML = price;
     priceHtml.appendChild(cameraPrice);
+
+    let description = data.description;
+    let cameraDescrip = document.createElement('p');
+    cameraDescrip.innerHTML = description;
+    descriptionHtml.appendChild(cameraDescrip);
 }
 
 
