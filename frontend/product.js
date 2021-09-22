@@ -44,7 +44,16 @@ function showProduct(data) {
     let cameraDescrip = document.createElement('p');
     cameraDescrip.innerHTML = description;
     descriptionHtml.appendChild(cameraDescrip);
+
+    
 }
+
+/*    
+    let imageUrl = data.imageUrl;
+    let cameraImage = document.createElement('img');
+    cameraImage.innerHTML = imageUrl;
+    nameHtml.appendChild(cameraName);
+*/
 
 
 
