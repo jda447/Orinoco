@@ -31,13 +31,13 @@ getSingleProductId(id);
 
 function showProduct(data) {
     let name = data.name;
-    let cameraName = document.createElement('p');
+    let cameraName = document.createElement('h5');
     cameraName.innerHTML = name;
     nameHtml.appendChild(cameraName);
 
-    let price = data.price;
+    let price = data.price.toFixed(2)/100;
     let cameraPrice = document.createElement('p');
-    cameraPrice.innerHTML = price;
+    cameraPrice.innerHTML = `$` + price;
     priceHtml.appendChild(cameraPrice);
 
     let description = data.description;
