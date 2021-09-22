@@ -1,8 +1,3 @@
-let cameraName = document.getElementById("name");
-let cameraPrice = document.getElementById("price");
-let cameraImage = document.getElementById("image");
-let cameraDescrip = document.getElementById("description");
-
 let product = {};
 
 function getProductId() {
@@ -48,7 +43,7 @@ function showProduct(data) {
     let imageUrl = data.imageUrl;
     let cameraImage = document.createElement('img');
     cameraImage.innerHTML = imageUrl;
-    imageHtml.appendChild(cameraImage);
+    document.querySelector('.imageHtml').appendChild(imageUrl);
 }
 
 /*    
