@@ -13,19 +13,22 @@ function getProductId() {
 }
 
 function getSingleProductId(id) {
-    fetch('http://localhost:3000/api/cameras' + id)
+    fetch('http://localhost:3000/api/cameras/' + id)
     .then((response) => {
         return response.json();
     })
     .then(data => {
       product = data;
       console.log(product);
-      singleProduct(data)
     })
     .catch((error) => console.error("FETCH ERROR:", error));
 }
 
-function singleProduct(data) {
+const id = getProductId();
+
+getSingleProductId(id);
+
+/*function singleProduct(data) {
 
     let name = data.name;
     let cameraName = document.createElement('p');
@@ -33,6 +36,7 @@ function singleProduct(data) {
     name.appendChild(cameraName);
 
 }
+*/
 
 /*  let newArticle = document.createElement('article');
     let newName = document.createElement('h3');
