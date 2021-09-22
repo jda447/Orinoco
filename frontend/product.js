@@ -20,23 +20,23 @@ function getSingleProductId(id) {
     .then(data => {
       product = data;
       console.log(product);
+      showProduct(data);
     })
     .catch((error) => console.error("FETCH ERROR:", error));
 }
 
 const id = getProductId();
-
 getSingleProductId(id);
 
-/*function singleProduct(data) {
 
+function showProduct(data) {
     let name = data.name;
     let cameraName = document.createElement('p');
     cameraName.innerHTML = name;
-    name.appendChild(cameraName);
-
+    nameHtml.appendChild(cameraName);
 }
-*/
+
+
 
 /*  let newArticle = document.createElement('article');
     let newName = document.createElement('h3');
