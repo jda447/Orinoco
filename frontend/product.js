@@ -40,10 +40,10 @@ function showProduct(data) {
     cameraDescrip.innerHTML = description;
     descriptionHtml.appendChild(cameraDescrip);
 
-    let imageUrl = data.imageUrl;
-    let cameraImage = document.createElement('img');
-    cameraImage.innerHTML = imageUrl;
-    document.querySelector('.imageHtml').appendChild(imageUrl);
+    let imageUrl = document.createElement('img');
+    image.src = data.imageUrl;
+    document.getElementById('image').appendChild(image);
+    image.innerHTML = imageUrl; 
 }
 
 /*    
