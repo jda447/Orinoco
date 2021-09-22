@@ -45,22 +45,3 @@ function showProduct(data) {
     document.getElementById('image').appendChild(image);
     image.innerHTML = imageUrl; 
 }
-
-/*    
-    let imageUrl = data.imageUrl;
-    let cameraImage = document.createElement('img');
-    cameraImage.innerHTML = imageUrl;
-    nameHtml.appendChild(cameraName);
-*/
-
-
-
-/*  let newArticle = document.createElement('article');
-    let newName = document.createElement('h3');
-    
-    newName.textContent = data.name;
-    newArticle.appendChild(newName);
-
-    const main = document.querySelector('container');
-    main.appendChild(newName);
-*/
