@@ -42,6 +42,6 @@ function showProduct(data) {
 
     let imageUrl = document.createElement('img');
     image.src = data.imageUrl;
-    document.getElementById('image').appendChild(image);
+    document.getElementById('image').appendChild(imageUrl);
     image.innerHTML = imageUrl; 
 }
