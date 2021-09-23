@@ -31,27 +31,14 @@ h3 {
     font-size: 2rem;
 }
 
-
-section img {
-    &:hover {
-        transform: scale(1.04);
-        transition: transform 600ms;
-        border: solid 2px #CCC;
-    }
-}
-
 p {
     font-weight: 500;
 }
 
 #productsButton {
     border-radius: 50%;
-    width: 50%;
-}
-
-#topButton {
-    border-radius: 50%;
-    width: 50%;   
+    width: 10%;
+    height: 10%;
 }
 
 footer {
@@ -74,3 +61,16 @@ footer {
 
 //JS
 
+.card {
+    display: inline-block;
+    width: 22%;
+    &:hover {
+        transform: scale(1.04);
+        transition: transform 600ms;
+        border: solid 2px #CCC;
+    }
+    a {
+    text-decoration: none;
+    color: black;
+    }
+}

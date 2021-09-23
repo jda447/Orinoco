@@ -14,7 +14,7 @@ async function displayCameras() {
     let html = '';
     cameras.forEach(camera => {
         let htmlSegment = `
-        <div class="card p-2 m-5" style="width: 18rem;">
+        <div class="card p-2 m-5">
         <a href="product.html?id=${camera._id}">
             <img class="card-img-top" src="${camera.imageUrl}" class="col" alt="Card image cap">
             <div class="card-body">
