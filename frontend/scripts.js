@@ -15,14 +15,14 @@ async function displayCameras() {
     cameras.forEach(camera => {
         let htmlSegment = `
         <div class="card p-2 m-5">
-        <a href="product.html?id=${camera._id}">
-            <img class="card-img-top" src="${camera.imageUrl}" class="col" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">${camera.name}</h5>
-                <p class="price">$${camera.price.toFixed(2)/100}</p>
-                <p class="card-title">${camera.description}</p>
-            </div>
-        </a>
+            <a href="product.html?id=${camera._id}">
+                <img class="card-img-top" src="${camera.imageUrl}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">${camera.name}</h5>
+                            <p id="price">$${camera.price.toFixed(2)/100}</p>
+                                <p class="card-text">${camera.description}</p>
+                    </div>
+            </a>
         </div>
         `;
 
@@ -33,8 +33,8 @@ async function displayCameras() {
     container.innerHTML = html;
 
 }
-
 displayCameras();
+
 
 function toggleCameras() {
     var x = document.getElementById("cameraToggle");
