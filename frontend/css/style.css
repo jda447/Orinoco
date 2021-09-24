@@ -7862,3 +7862,8 @@ footer {
   .card a {
     text-decoration: none;
     color: black; }
+
+@media all and (max-width: 415px) {
+  .card {
+    display: block;
+    width: 75%; } }

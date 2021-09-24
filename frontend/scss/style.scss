@@ -83,3 +83,13 @@ footer {
         color: black;
         }
 }
+
+
+//media queries
+
+@media all and (max-width: 415px) {
+    .card {
+        display: block;
+        width: 75%;
+    }
+}
