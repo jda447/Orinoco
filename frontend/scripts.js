@@ -37,10 +37,10 @@ displayCameras();
 
 
 function toggleCameras() {
-    var x = document.getElementById("cameraToggle");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
+    let cameras = document.getElementById("cameraToggle");
+        if (cameras.style.display === "none") {
+        cameras.style.display = "block";
+        } else {
+        cameras.style.display = "none";
+        }
+}
