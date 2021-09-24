@@ -7863,11 +7863,6 @@ footer {
     text-decoration: none;
     color: black; }
 
-@media all and (max-width: 415px) {
-  .card {
-    display: block;
-    width: 75%; } }
-
 @media all and (max-width: 990px) {
   .card {
     display: block;
