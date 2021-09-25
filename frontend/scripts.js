@@ -20,7 +20,7 @@ async function displayCameras() {
                     <div class="card-body">
                         <h5 class="card-title">${camera.name}</h5>
                             <p id="price">$${camera.price.toFixed(2)/100}</p>
-                                <p class="card-text">${camera.description}</p>
+                                <i class="card-text">${camera.description}</i>
                     </div>
             </a>
         </div>

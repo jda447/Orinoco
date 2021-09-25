@@ -36,7 +36,7 @@ function showProduct(data) {
     priceHtml.appendChild(cameraPrice);
 
     let description = data.description;
-    let cameraDescrip = document.createElement('p');
+    let cameraDescrip = document.createElement('i');
     cameraDescrip.innerHTML = description;
     descriptionHtml.appendChild(cameraDescrip);
 
