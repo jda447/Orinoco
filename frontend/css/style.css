@@ -7874,3 +7874,11 @@ footer {
   .card {
     display: block;
     width: 75%; } }
+
+@media all and (max-width: 990px) {
+  #image {
+    display: block;
+    width: 75%; }
+  #descriptionHtml {
+    display: block;
+    width: 75%; } }
