@@ -43,5 +43,14 @@ function showProduct(data) {
     let imageUrl = document.createElement('img');
     image.src = data.imageUrl;
     document.getElementById('image').appendChild(imageUrl);
-    image.innerHTML = imageUrl; 
+    image.innerHTML = imageUrl;
+
+    let lenses = data.lenses;
+    let select = document.getElementById("lensOption");
+
+    for (let i in lenses) {
+        let lensChoice = document.createElement("option");
+        lensChoice.textContent = lenses[i];
+        select.appendChild(lensChoice);
+      }
 }
