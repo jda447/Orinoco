@@ -7884,4 +7884,7 @@ footer {
     width: 75%; }
   #addToCart {
     display: block;
-    width: 75%; } }
+    width: 75%; }
+  #lensOption {
+    display: block;
+    width: 175%; } }
