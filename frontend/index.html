@@ -1,41 +1,48 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+    <html lang="en">
     <head>
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style.css">
         <script src="https://kit.fontawesome.com/87ea27cce9.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href='http://fonts.googleapis.com/css?family=Parisienne:300,400' rel='stylesheet' type='text/css'>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Orinoco/home</title>
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>Orinoco/product/cart</title>
     </head>
     <body>
         <div class="bg-dark">
             <div class="container-fluid">
                 <div class="row">
                   <nav class="col navbar navbar-expand bg-dark" role="navigation">
-                    <ul class="navbar-nav">
-                      <a class="navbar-brand active text-light" href="index.html">Orinoco</a>
+                    <ul class="navbar-nav mr-auto pl-md-5">
+                      <a class="navbar-brand active text-light" id="navOrinoco" href="index.html">Orinoco</a>
                     </ul>
-                    <ul class="navbar-nav">
-                      <a class="nav-link text-light" id="home" href="index.html">Home</a>
-                      <a class="nav-link text-light" id="cart" href="cart-page.html">Cart<i class="fas fa-shopping-basket px-2"></i>
+                    <ul class="navbar-nav ml-auto pr-md-5">
+                      <a class="nav-link text-light" href="index.html">Home</a>
+                      <a class="nav-link text-light" href="cart-page.html">Cart<i class="fas fa-shopping-basket px-2"></i>
                       <span class="cartNum" id="cartNum">0</span></a>
                     </ul>
                   </nav>
                 </div>
             </div>
         </div>
-
-        <header class="col-12 col-md-12 py-4 mx-auto text-center text-dark">
-          <span class="border"><h1>Vintage Cameras</h1></span>
-            <h2 class="col-12 my-4">Browse our selection of the highest quality<br> collectable classic used film cameras &amp; lenses.</h2>
-              <button type="button" onclick="toggleCameras()" id="productsButton" class="btn btn-light btn-rounded btn-text-light btn-outline-dark btn-floating p-3 my-3 mx-auto col-4 col-md-2 col-lg-1 text-weight-bold">Cameras<br><i class="fas fa-camera"></i></button>
-                <div class="container" id="cameraToggle">
-                  <div class="card"></div>
-                </div>
+        <header>
+          <div class="col-12 col-md-12 py-4 mx-auto text-center text-dark">
+          <span class="border">
+          <h1>Vintage Cameras</h1>
+          </span>
+          </div>
         </header>
+
+        <section>
+          <button type="button" onclick="toggleCameras()" id="productsButton" class="btn btn-light btn-rounded btn-text-light btn-outline-dark btn-floating p-3 my-3 mx-auto col-4 col-md-2 col-lg-1 text-weight-bold">Cameras<br><i class="fas fa-camera"></i></button>
+            <div class="container" id="cameraToggle">
+              <div class="card">
+              </div>
+            </div>
+        </section>
 
         <div class="row">
           <a href="#top" id="topButton" class="btn btn-light btn-text-bold btn-outline-dark btn-floating p-1 mb-5 mx-auto col-4 col-md-2 col-lg-1 text-weight-bold">Top<i class="fas fa-arrow-up pl-2"></i></a>
