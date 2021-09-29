@@ -17,7 +17,6 @@ function getSingleProductId(id) {
     })
     .catch((error) => console.error("FETCH ERROR:", error));
 }
-
 const id = getProductId();
 getSingleProductId(id);
 
@@ -54,7 +53,6 @@ function showProduct(data) {
 }
 
 const addToCart = document.getElementById('addToCart');
-
 addToCart.addEventListener('click', () => {
     let cameraChoice = [];
     const localStorageContent = localStorage.getItem('cart');

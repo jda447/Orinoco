@@ -27,7 +27,7 @@ async function displayCameras() {
         `;
 
         html += htmlSegment;
-    });
+});
 
     let container = document.querySelector('.container');
     container.innerHTML = html;
