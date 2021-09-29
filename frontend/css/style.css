@@ -7805,22 +7805,13 @@ textarea.form-control-lg {
     display: none !important; } }
 
 h1, .h1 {
-  font-family: 'Parisienne';
-  font-size: 3.5rem; }
+  font-family: 'Parisienne'; }
 
 h2, .h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem; }
+  font-family: Arial, Helvetica, sans-serif; }
 
 h3, .h3 {
-  font-family: 'Parisienne';
-  font-size: 2rem; }
-
-#home:hover {
-  opacity: 0.8; }
-
-#cart:hover {
-  opacity: 0.8; }
+  font-family: 'Parisienne'; }
 
 .navbar-brand {
   font-family: 'Parisienne';
@@ -7832,32 +7823,12 @@ h3, .h3 {
   font-family: 'Parisienne';
   font-size: 2.5rem; }
 
-p {
-  font-weight: 500; }
-
-i {
-  font-weight: 450; }
-
 #productsButton {
   border-radius: 50%; }
 
-#addToCart:hover {
-  transform: scale(1.04);
-  transition: transform 600ms; }
-
 footer {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.3rem; }
-
-.subtotal {
-  font-size: 1.5rem; }
-
-.cart-total {
-  font-size: 2.7rem; }
-
-.form {
-  display: flex;
-  justify-content: flex-end; }
+  font-size: 0.5rem; }
 
 .card {
   display: inline-block;
@@ -7888,3 +7859,19 @@ footer {
   #lensOption {
     display: block;
     width: 175%; } }
+
+p {
+  font-weight: 500; }
+
+i {
+  font-weight: 450; }
+
+.subtotal {
+  font-size: 1.5rem; }
+
+.cart-total {
+  font-size: 2.7rem; }
+
+.form {
+  display: flex;
+  justify-content: flex-end; }
