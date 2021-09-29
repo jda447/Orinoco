@@ -56,25 +56,23 @@ function showProduct(data) {
 }
 
 const addToCart = document.getElementById('addToCart');
-let lens = document.getElementById('lensOption');
 
 addToCart.addEventListener('click', () => {
-    let cartItems = [];
+    let cameraChoice = [];
     const localStorageContent = localStorage.getItem('cart');
     if (localStorageContent === null) {
-      cartItems = [];
+      cameraChoice = [];
     } else {
-      cartItems = JSON.parse(localStorageContent);
+      cameraChoice = JSON.parse(localStorageContent);
     }
-    let singleProduct = {
+    let cameraAdded = {
       imageUrl: product.imageUrl,
       price: product.price,
       name: product.name,
-      selectLenses: product.value,
-      prodId: product._id,
+      cameraId: product._id,
       quantity: 1
     };
-    cartItems.push(singleProduct);
-    localStorage.setItem('cart', JSON.stringify(cartItems));
+    cameraChoice.push(cameraAdded);
+    localStorage.setItem('cart', JSON.stringify(cameraChoice));
 })
 
