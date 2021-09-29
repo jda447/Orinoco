@@ -74,5 +74,6 @@ addToCart.addEventListener('click', () => {
     };
     cameraChoice.push(cameraAdded);
     localStorage.setItem('cart', JSON.stringify(cameraChoice));
+    alert('Camera added to cart!');
 })
 
