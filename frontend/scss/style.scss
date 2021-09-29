@@ -16,10 +16,6 @@ h3 {
 
 .navbar-brand {
     font-family: 'Parisienne';
-    font-size: 2.5rem;
-    &:hover {
-        opacity: 0.8;
-    }
 }
 
 #navOrinoco {
@@ -51,6 +47,27 @@ footer {
         }
 }
 
+p {
+    font-weight: 500;
+}
+
+i {
+    font-weight: 450;
+}
+
+.subtotal {
+    font-size: 1.5rem;
+}
+
+.cart-total {
+    font-size: 2.7rem;
+}
+
+.form {
+    display: flex;
+    justify-content: flex-end;
+}
+
 //media queries
 
 @media all and (max-width: 990px) {
@@ -78,28 +95,3 @@ footer {
         width: 175%;
     }
 }
-
-
-
-
-p {
-    font-weight: 500;
-}
-
-i {
-    font-weight: 450;
-}
-
-.subtotal {
-    font-size: 1.5rem;
-}
-
-.cart-total {
-    font-size: 2.7rem;
-}
-
-.form {
-    display: flex;
-    justify-content: flex-end;
-}
-

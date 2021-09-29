@@ -7814,10 +7814,7 @@ h3, .h3 {
   font-family: 'Parisienne'; }
 
 .navbar-brand {
-  font-family: 'Parisienne';
-  font-size: 2.5rem; }
-  .navbar-brand:hover {
-    opacity: 0.8; }
+  font-family: 'Parisienne'; }
 
 #navOrinoco {
   font-family: 'Parisienne';
@@ -7841,6 +7838,22 @@ footer {
     text-decoration: none;
     color: black; }
 
+p {
+  font-weight: 500; }
+
+i {
+  font-weight: 450; }
+
+.subtotal {
+  font-size: 1.5rem; }
+
+.cart-total {
+  font-size: 2.7rem; }
+
+.form {
+  display: flex;
+  justify-content: flex-end; }
+
 @media all and (max-width: 990px) {
   .card {
     display: block;
@@ -7859,19 +7872,3 @@ footer {
   #lensOption {
     display: block;
     width: 175%; } }
-
-p {
-  font-weight: 500; }
-
-i {
-  font-weight: 450; }
-
-.subtotal {
-  font-size: 1.5rem; }
-
-.cart-total {
-  font-size: 2.7rem; }
-
-.form {
-  display: flex;
-  justify-content: flex-end; }
