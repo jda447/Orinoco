@@ -12,6 +12,7 @@
         <title>Orinoco/product/cart</title>
     </head>
     <body>
+
         <div class="bg-dark">
             <div class="container-fluid">
                 <div class="row">
@@ -28,13 +29,19 @@
                 </div>
             </div>
         </div>
+
         <header>
           <div class="col-12 col-md-12 py-4 mx-auto text-center text-dark">
-          <span class="border">
-          <h1>Vintage Cameras</h1>
-          </span>
+            <span class="border">
+              <h1>Vintage Cameras</h1>
+            </span>
           </div>
         </header>
+
+        <div class="container col text-center" id="cartItems">
+          <p>Your Cart</p>
+        </div>
+
         <form class="needs-validation" novalidate>
           <div class="col-md-4 mb-3">
             <label for="firstName">First name</label>
@@ -80,8 +87,11 @@
               Please provide a valid email.
             </div>
           </div>
+
         <button class="btn btn-secondary" type="submit" id="formSubmit">Submit form</button>
+
       </form>
+
         <footer class="bg-dark text-center text-white">
             <div class="footer-text pt-2">
             <h3>Orinoco</h3>
@@ -115,5 +125,5 @@
 
           <script src="js/cart.js"></script>
           
-      </body>
-  </html>
+    </body>
+</html>
