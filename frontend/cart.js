@@ -1,0 +1,13 @@
+let cartItems = JSON.parse(localStorage.getItem('cart'));
+console.log(localStorage.getItem('cart'));
+
+
+/*function showCartItems() {
+let cartItems = JSON.parse(localStorage.getItem('cart'));
+    if (cartItems)    
+        for (let i in cartItems) {
+                let tableRow = document.createElement('tr');
+            }
+}
+showCartItems();
+*/
