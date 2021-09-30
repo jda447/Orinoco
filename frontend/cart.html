@@ -11,126 +11,126 @@
         <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
         <title>Orinoco/product/cart</title>
     </head>
-    <body>
+  <body>
 
-        <div class="bg-dark">
-            <div class="container-fluid">
-                <div class="row">
-                  <nav class="col navbar navbar-expand bg-dark" role="navigation">
-                    <ul class="navbar-nav mr-auto pl-md-5">
-                      <a class="navbar-brand active text-light" id="navOrinoco" href="index.html">Orinoco</a>
-                    </ul>
-                    <ul class="navbar-nav ml-auto pr-md-5">
-                      <a class="nav-link text-light" href="index.html">Home</a>
-                      <a class="nav-link text-light" href="cart.html">Cart<i class="fas fa-shopping-basket px-2"></i>
-                      <span class="cartNum" id="cartNum">0</span></a>
-                    </ul>
-                  </nav>
-                </div>
+    <div class="bg-dark">
+        <div class="container-fluid">
+            <div class="row">
+              <nav class="col navbar navbar-expand bg-dark" role="navigation">
+                <ul class="navbar-nav mr-auto pl-md-5">
+                  <a class="navbar-brand active text-light" id="navOrinoco" href="index.html">Orinoco</a>
+                </ul>
+                <ul class="navbar-nav ml-auto pr-md-5">
+                  <a class="nav-link text-light" href="index.html">Home</a>
+                  <a class="nav-link text-light" href="cart.html">Cart<i class="fas fa-shopping-basket px-2"></i>
+                  <span class="cartNum" id="cartNum">0</span></a>
+                </ul>
+              </nav>
             </div>
         </div>
+    </div>
 
-        <header>
-          <div class="col-12 col-md-12 py-4 mx-auto text-center text-dark">
-            <span class="border">
-              <h1>Vintage Cameras</h1>
-            </span>
-          </div>
-        </header>
+    <header>
+      <div class="col-12 col-md-12 py-4 mx-auto text-center text-dark">
+        <span class="border">
+          <h1>Vintage Cameras</h1>
+        </span>
+      </div>
+    </header>
 
-        <div class="container col-8 my-4 text-center" id="cartItems">
-          <p>Your Cart</p>
-          <table class="table">
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
+    <div class="container col-8 my-4 text-center" id="cartItems">
+      <p>Your Cart</p>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <form class="border m-5">
+      <div class="form-row mx-5 mt-5">
+        <div class="form-group col-md-6 px-3">
+          <label for="firstName">First name</label>
+          <input type="text" class="form-control" id="firstName" placeholder="First name" value="" required>
         </div>
+        <div class="form-group col-md-6 px-3">
+          <label for="lastName">Last name</label>
+        <input type="text" class="form-control" id="lastname" placeholder="Last name" value="" required>
+        </div>
+      </div>
+      <div class="form-group mx-5 px-4">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" id="address" placeholder="Address" value="" required>
+      </div>
+      <div class="form-row mx-5">
+        <div class="form-group col-md-6 px-3">
+          <label for="city">City</label>
+          <input type="text" class="form-control" id="city" placeholder="City" required>
+      </div>
+        <div class="form-group col-md-6 px-3">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Email" required>
+        </div>
+      </div>
 
-        <form class="border m-5">
-          <div class="form-row mx-5 mt-5">
-            <div class="form-group col-md-6 px-3">
-              <label for="firstName">First name</label>
-              <input type="text" class="form-control" id="firstName" placeholder="First name" value="" required>
-            </div>
-            <div class="form-group col-md-6 px-3">
-              <label for="lastName">Last name</label>
-            <input type="text" class="form-control" id="lastname" placeholder="Last name" value="" required>
-            </div>
-          </div>
-          <div class="form-group mx-5 px-4">
-            <label for="address">Address</label>
-            <input type="text" class="form-control" id="address" placeholder="Address" value="" required>
-          </div>
-          <div class="form-row mx-5">
-            <div class="form-group col-md-6 px-3">
-              <label for="city">City</label>
-              <input type="text" class="form-control" id="city" placeholder="City" required>
-          </div>
-            <div class="form-group col-md-6 px-3">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Email" required>
-            </div>
-          </div>
+      <div class="container my-3">
+        <div class="col-md-12 text-center">
+          <button class="btn btn-secondary text-bold mt-3 p-3" type="submit" id="formSubmit">
+            Submit form
+          </button>
+        </div>
+      </div>
+    </form>
 
-          <div class="container my-3">
-            <div class="col-md-12 text-center">
-              <button class="btn btn-secondary text-bold mt-3 p-3" type="submit" id="formSubmit">
-                Submit form
-              </button>
-            </div>
-          </div>
-        </form>
+    <footer class="bg-dark text-center text-white">
+        <div class="footer-text pt-2">
+          <h3>Orinoco</h3>
+        </div>
+        <div class="container pb-3">
+          <section class="mb-1">
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+              <i class="fab fa-google"></i>
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+              <i class="fab fa-github"></i>
+            </a>
+          </section>
+        </div>
+        <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.2);">
+          Copyright © Orinoco, Inc.
+        </div>
+    </footer>
 
-        <footer class="bg-dark text-center text-white">
-            <div class="footer-text pt-2">
-            <h3>Orinoco</h3>
-            </div>
-            <div class="container pb-3">
-              <section class="mb-1">
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                  <i class="fab fa-google"></i>
-                </a>
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                <i class="fab fa-github"></i>
-                </a>
-              </section>
-            </div>
-            <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.2);">
-              Copyright © Orinoco, Inc.
-            </div>
-          </footer>
-
-          <script src="js/cart.js"></script>
+      <script src="js/cart.js"></script>
           
-    </body>
+  </body>
 </html>
