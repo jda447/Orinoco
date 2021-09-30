@@ -53,6 +53,7 @@ function showProduct(data) {
 }
 
 const addToCart = document.getElementById('addToCart');
+let select = document.getElementById('lensOption');
 addToCart.addEventListener('click', () => {
     let cameraChoice = [];
     const localStorageContent = localStorage.getItem('cart');
@@ -64,6 +65,7 @@ addToCart.addEventListener('click', () => {
     let cameraAdded = {
       imageUrl: product.imageUrl,
       price: product.price,
+      selectLenses: select.value,
       name: product.name,
       cameraId: product._id,
       quantity: 1
