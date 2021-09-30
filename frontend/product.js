@@ -56,11 +56,11 @@ const addToCart = document.getElementById('addToCart');
 addToCart.addEventListener('click', () => {
     let cameraChoice = [];
     const localStorageContent = localStorage.getItem('cart');
-    if (localStorageContent === null) {
-      cameraChoice = [];
-    } else {
-      cameraChoice = JSON.parse(localStorageContent);
-    }
+      if (localStorageContent === null) {
+        cameraChoice = [];
+      } else {
+        cameraChoice = JSON.parse(localStorageContent);
+      }
     let cameraAdded = {
       imageUrl: product.imageUrl,
       price: product.price,
@@ -68,8 +68,10 @@ addToCart.addEventListener('click', () => {
       cameraId: product._id,
       quantity: 1
     };
+
     cameraChoice.push(cameraAdded);
     localStorage.setItem('cart', JSON.stringify(cameraChoice));
     alert('Camera added to cart!');
+    
 })
 
