@@ -1,5 +1,3 @@
-let cartItems = JSON.parse(localStorage.getItem('cart'));
-
 for (let i in cartItems) {
     console.log(cartItems[i]);
 
