@@ -6,6 +6,12 @@ if (typeof(Storage) !== "undefined") {
     for (let i in cartItems) {
         console.log(cartItems[i]);
 
+        let imageUrl = document.createElement('img');
+        imageUrl.src = cartItems[i].imageUrl;
+        imageUrl.style.height = '20%';
+        imageUrl.style.width = '20%';
+        document.getElementById('result').appendChild(imageUrl);
+
         let name = cartItems[i].name;
         let cameraName = document.createElement('td');
         cameraName.innerHTML = name;
@@ -20,12 +26,6 @@ if (typeof(Storage) !== "undefined") {
         let select = document.createElement("td");
         select.innerHTML = selectLenses;
         result.appendChild(select);
-
-        let imageUrl = document.createElement('img');
-        imageUrl.src = cartItems[i].imageUrl;
-        imageUrl.style.height = '20%';
-        imageUrl.style.width = '20%';
-        document.getElementById('result').appendChild(imageUrl);
 
     }
 }
