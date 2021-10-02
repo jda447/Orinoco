@@ -7,10 +7,21 @@ if (typeof(Storage) !== "undefined") {
         console.log(cartItems[i]);
 
         let name = cartItems[i].name;
-        let cameraName = document.createElement('h5');
+        let cameraName = document.createElement('tr');
         cameraName.innerHTML = name;
         result.appendChild(cameraName);
 
+        let price = cartItems[i].price.toFixed(2)/100;
+        let cameraPrice = document.createElement('tr');
+        cameraPrice.innerHTML = `$` + price;
+        result.appendChild(cameraPrice);
+    
+
+    }
+}
+
+
+/*
     let tr = document.createElement('tr');
     let imageCart = document.createElement('img');
     let nameCart = document.createElement('p');
@@ -19,18 +30,4 @@ if (typeof(Storage) !== "undefined") {
     let btnRemoveCart = document.createElement('td');
     let divNameCart = document.createElement('td');
     let quantityCart = document.createElement('td');
-    
-
-    }
-}
-
-
-/*function showCartItems() {
-let cartItems = JSON.parse(localStorage.getItem('cart'));
-    if (cartItems)    
-        for (let i in cartItems) {
-                let tableRow = document.createElement('tr');
-            }
-}
-showCartItems();
 */
