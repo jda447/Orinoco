@@ -1,13 +1,13 @@
 let cartItems = JSON.parse(localStorage.getItem('cart'));
+const tableHtml = document.getElementById('result');
 
-for (let i in cartItems) {
-    console.log(cartItems[i]);
+    
+if (typeof(Storage) !== "undefined") {
+    for (let i in cartItems) {
+        console.log(cartItems[i]);
 
-    if (typeof(Storage) !== "undefined") {
-        document.getElementById("result").innerHTML = localStorage.getItem("cart");
-      } else {
-        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-      }
+        tableHtml.innerHTML = localStorage.getItem("cart");
+
     let tr = document.createElement('tr');
     let imageCart = document.createElement('img');
     let nameCart = document.createElement('p');
@@ -16,7 +16,9 @@ for (let i in cartItems) {
     let btnRemoveCart = document.createElement('td');
     let divNameCart = document.createElement('td');
     let quantityCart = document.createElement('td');
+    
 
+    }
 }
 
 
