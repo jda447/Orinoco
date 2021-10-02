@@ -21,6 +21,12 @@ if (typeof(Storage) !== "undefined") {
         select.innerHTML = selectLenses;
         result.appendChild(select);
 
+        let imageUrl = document.createElement('img');
+        imageUrl.src = cartItems[i].imageUrl;
+        imageUrl.style.height = '20%';
+        imageUrl.style.width = '20%';
+        document.getElementById('result').appendChild(imageUrl);
+
     }
 }
 
