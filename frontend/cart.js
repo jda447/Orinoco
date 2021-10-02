@@ -7,17 +7,17 @@ if (typeof(Storage) !== "undefined") {
         console.log(cartItems[i]);
 
         let name = cartItems[i].name;
-        let cameraName = document.createElement('tr');
+        let cameraName = document.createElement('td');
         cameraName.innerHTML = name;
         result.appendChild(cameraName);
 
         let price = cartItems[i].price.toFixed(2)/100;
-        let cameraPrice = document.createElement('tr');
+        let cameraPrice = document.createElement('td');
         cameraPrice.innerHTML = `$` + price;
         result.appendChild(cameraPrice);
         
         let selectLenses = cartItems[i].selectLenses;
-        let select = document.createElement("tr");
+        let select = document.createElement("td");
         select.innerHTML = selectLenses;
         result.appendChild(select);
 
