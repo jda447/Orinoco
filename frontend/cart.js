@@ -6,7 +6,10 @@ if (typeof(Storage) !== "undefined") {
     for (let i in cartItems) {
         console.log(cartItems[i]);
 
-        tableHtml.innerHTML = localStorage.getItem("cart");
+        let name = cartItems[i].name;
+        let cameraName = document.createElement('h5');
+        cameraName.innerHTML = name;
+        result.appendChild(cameraName);
 
     let tr = document.createElement('tr');
     let imageCart = document.createElement('img');
