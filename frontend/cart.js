@@ -15,7 +15,11 @@ if (typeof(Storage) !== "undefined") {
         let cameraPrice = document.createElement('tr');
         cameraPrice.innerHTML = `$` + price;
         result.appendChild(cameraPrice);
-    
+        
+        let selectLenses = cartItems[i].selectLenses;
+        let select = document.createElement("tr");
+        select.innerHTML = selectLenses;
+        result.appendChild(select);
 
     }
 }
