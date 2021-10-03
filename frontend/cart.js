@@ -13,17 +13,17 @@ if (typeof(Storage) !== "cart") {
         document.getElementById('result').appendChild(imageUrl);
 
         let name = cartItems[i].name;
-        let cameraName = document.createElement('td');
+        let cameraName = document.createElement('tr');
         cameraName.innerHTML = name;
         result.appendChild(cameraName);
 
         let price = cartItems[i].price.toFixed(2)/100;
-        let cameraPrice = document.createElement('td');
+        let cameraPrice = document.createElement('tr');
         cameraPrice.innerHTML = `$` + price;
         result.appendChild(cameraPrice);
         
         let selectLenses = cartItems[i].selectLenses;
-        let select = document.createElement("td");
+        let select = document.createElement("tr");
         select.innerHTML = selectLenses;
         result.appendChild(select);
 
