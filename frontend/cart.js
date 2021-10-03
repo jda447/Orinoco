@@ -2,7 +2,7 @@ let cartItems = JSON.parse(localStorage.getItem('cart'));
 const tableHtml = document.getElementById('result');
 
     
-if (typeof(Storage) !== "undefined") {
+if (typeof(Storage) !== "cart") {
     for (let i in cartItems) {
         console.log(cartItems[i]);
 
