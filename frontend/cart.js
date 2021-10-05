@@ -10,22 +10,32 @@ if (typeof(Storage) !== "cart") {
         imageUrl.src = cartItems[i].imageUrl;
         imageUrl.style.height = '20%';
         imageUrl.style.width = '20%';
-        document.getElementById('result').appendChild(imageUrl);
 
         let name = cartItems[i].name;
         let cameraName = document.createElement('tr');
         cameraName.innerHTML = name;
-        result.appendChild(cameraName);
 
         let price = cartItems[i].price.toFixed(2)/100;
         let cameraPrice = document.createElement('tr');
         cameraPrice.innerHTML = `$` + price;
-        result.appendChild(cameraPrice);
         
         let selectLenses = cartItems[i].selectLenses;
-        let select = document.createElement("tr");
+        let select = document.createElement('tr');
         select.innerHTML = selectLenses;
+
+        document.getElementById('result').appendChild(imageUrl);
+        result.appendChild(cameraName);
+        result.appendChild(cameraPrice);
         result.appendChild(select);
+
+        let deleteBtn = document.createElement('button');
+        result.appendChild(deleteBtn);
+        deleteBtn.innerHTML = `<input type="button" value="Delete" onclick="deleteRow(this)">`;
+
+        function deleteRow(r) {
+            let i = r.parentNode.parentNode.rowIndex;
+            document.getElementById("result").deleteRow(i);
+          }
 
     }
 }
