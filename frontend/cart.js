@@ -26,14 +26,14 @@ if (typeof(Storage) !== "cart") {
         let selectLenses = cartItems[i].selectLenses;
         select.innerHTML = selectLenses;
 
-        document.getElementById("result").appendChild(itemRow);
-        document.getElementById('myTr').appendChild(imageUrl);
-        document.getElementById("myTr").appendChild(cameraName);
-        document.getElementById("myTr").appendChild(cameraPrice);
-        document.getElementById("myTr").appendChild(select);
+        tableHtml.appendChild(itemRow);
+        itemRow.appendChild(imageUrl);
+        itemRow.appendChild(cameraName);
+        itemRow.appendChild(cameraPrice);
+        itemRow.appendChild(select);
 
         let deleteBtn = document.createElement('td');
-        document.getElementById("myTr").appendChild(deleteBtn);
+        itemRow.appendChild(deleteBtn);
         deleteBtn.innerHTML = `<input type="button" value="Delete" onclick="deleteRow(this)">`;
         
 
