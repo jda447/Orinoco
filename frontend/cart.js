@@ -43,6 +43,10 @@ if (typeof(Storage) !== "cart") {
 function deleteRow(r) {
     let i = r.parentNode.parentNode.rowIndex;
     document.getElementById("result").deleteRow(i);
+
+    let cartItems = JSON.parse(localStorage.getItem('cart'));
+    cartItems.splice(r, 1);
+    localStorage.setItem('cart', JSON.stringify(cartItems));
 }
 
 
