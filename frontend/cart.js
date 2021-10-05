@@ -11,8 +11,8 @@ if (typeof(Storage) !== "cart") {
 
         let imageUrl = document.createElement('img');
         imageUrl.src = cartItems[i].imageUrl;
-        imageUrl.style.height = '20%';
-        imageUrl.style.width = '20%';
+        imageUrl.style.height = '72%';
+        imageUrl.style.width = '72%';
 
         let cameraName = document.createElement('td');
         let name = cartItems[i].name;
