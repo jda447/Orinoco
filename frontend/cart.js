@@ -6,38 +6,43 @@ if (typeof(Storage) !== "cart") {
     for (let i in cartItems) {
         console.log(cartItems[i]);
 
+        let itemRow = document.createElement("tr");
+        itemRow.setAttribute("id", "myTr");
+
         let imageUrl = document.createElement('img');
         imageUrl.src = cartItems[i].imageUrl;
         imageUrl.style.height = '20%';
         imageUrl.style.width = '20%';
 
+        let cameraName = document.createElement('td');
         let name = cartItems[i].name;
-        let cameraName = document.createElement('tr');
         cameraName.innerHTML = name;
 
+        let cameraPrice = document.createElement('td');
         let price = cartItems[i].price.toFixed(2)/100;
-        let cameraPrice = document.createElement('tr');
         cameraPrice.innerHTML = `$` + price;
-        
+
+        let select = document.createElement('td');
         let selectLenses = cartItems[i].selectLenses;
-        let select = document.createElement('tr');
         select.innerHTML = selectLenses;
 
-        document.getElementById('result').appendChild(imageUrl);
-        result.appendChild(cameraName);
-        result.appendChild(cameraPrice);
-        result.appendChild(select);
+        document.getElementById("result").appendChild(itemRow);
+        document.getElementById('myTr').appendChild(imageUrl);
+        document.getElementById("myTr").appendChild(cameraName);
+        document.getElementById("myTr").appendChild(cameraPrice);
+        document.getElementById("myTr").appendChild(select);
 
-        let deleteBtn = document.createElement('button');
-        result.appendChild(deleteBtn);
+        let deleteBtn = document.createElement('td');
+        document.getElementById("myTr").appendChild(deleteBtn);
         deleteBtn.innerHTML = `<input type="button" value="Delete" onclick="deleteRow(this)">`;
-
-        function deleteRow(r) {
-            let i = r.parentNode.parentNode.rowIndex;
-            document.getElementById("result").deleteRow(i);
-          }
+        
 
     }
+}
+
+function deleteRow(r) {
+    let i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("result").deleteRow(i);
 }
 
 
