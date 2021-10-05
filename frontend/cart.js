@@ -7,12 +7,12 @@ if (typeof(Storage) !== "cart") {
         console.log(cartItems[i]);
 
         let itemRow = document.createElement("tr");
-        itemRow.setAttribute("id", "myTr");
 
         let imageUrl = document.createElement('img');
         imageUrl.src = cartItems[i].imageUrl;
         imageUrl.style.height = '72%';
         imageUrl.style.width = '72%';
+        imageUrl.style.marginTop = "0.5rem";
 
         let cameraName = document.createElement('td');
         let name = cartItems[i].name;
@@ -48,15 +48,3 @@ function deleteRow(r) {
     cartItems.splice(r, 1);
     localStorage.setItem('cart', JSON.stringify(cartItems));
 }
-
-
-/*
-    let tr = document.createElement('tr');
-    let imageCart = document.createElement('img');
-    let nameCart = document.createElement('p');
-    let lensCart = document.createElement('td');
-    let priceCart = document.createElement('td');
-    let btnRemoveCart = document.createElement('td');
-    let divNameCart = document.createElement('td');
-    let quantityCart = document.createElement('td');
-*/
