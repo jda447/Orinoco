@@ -17,20 +17,23 @@ if (typeof(Storage) !== "cart") {
         let cameraName = document.createElement('td');
         let name = cartItems[i].name;
         cameraName.innerHTML = name;
-
-        let cameraPrice = document.createElement('td');
-        let price = cartItems[i].price.toFixed(2)/100;
-        cameraPrice.innerHTML = `$` + price;
+        cameraName.style.fontWeight = "600";
 
         let select = document.createElement('td');
         let selectLenses = cartItems[i].selectLenses;
         select.innerHTML = selectLenses;
+        select.style.fontSize = "0.9rem";
+
+        let cameraPrice = document.createElement('td');
+        let price = cartItems[i].price.toFixed(2)/100;
+        cameraPrice.innerHTML = `$` + price;
+        cameraPrice.style.fontSize = "1.2rem";
 
         tableHtml.appendChild(itemRow);
         itemRow.appendChild(imageUrl);
         itemRow.appendChild(cameraName);
-        itemRow.appendChild(cameraPrice);
         itemRow.appendChild(select);
+        itemRow.appendChild(cameraPrice);
 
         let deleteBtn = document.createElement('td');
         itemRow.appendChild(deleteBtn);
