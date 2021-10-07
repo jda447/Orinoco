@@ -20,29 +20,31 @@ if (typeof(Storage) !== "cart") {
         cameraName.innerHTML = name;
         cameraName.style.fontWeight = "600";
 
-        let select = document.createElement('td');
+        let lens = document.createElement('td');
         let selectLenses = cartItems[i].selectLenses;
-        select.innerHTML = selectLenses;
-        select.style.fontSize = "0.9rem";
+        lens.innerHTML = selectLenses;
+        lens.style.fontSize = "0.8rem";
+        lens.style.paddingLeft = "0.5rem";
 
         let cameraPrice = document.createElement('td');
         let price = cartItems[i].price.toFixed(2)/100;
         cameraPrice.innerHTML = `$` + price;
         cameraPrice.style.fontWeight = "550";
-        cameraPrice.style.marginLeft = "2rem";
+        cameraPrice.style.paddingLeft = "0.5rem";
 
         tableHtml.appendChild(itemRow);
         itemRow.appendChild(imageUrl);
         itemRow.appendChild(cameraName);
-        itemRow.appendChild(select);
+        itemRow.appendChild(lens);
         itemRow.appendChild(cameraPrice);
         
         let quantity = document.createElement('td');
         quantity.innerHTML = `<input type="quantity-input" class="col-2" value ="${cartItems[i].quantity}" type="number" value="1">`;
         itemRow.appendChild(quantity);
+        quantity.style.paddingLeft = "0.5rem";
 
         let deleteBtn = document.createElement('td');
-        deleteBtn.innerHTML = `<input type="button" value="Delete" onclick="deleteRow(this)">`;
+        deleteBtn.innerHTML = `<input type="button" value="Delete" data-price="100" onclick="deleteRow(this)">`;
         itemRow.appendChild(deleteBtn);
 
     }
