@@ -20,18 +20,18 @@ if (typeof(Storage) !== "cart") {
         let name = cartItems[i].name;
         cameraName.innerHTML = name;
         cameraName.style.fontWeight = "600";
+        cameraName.style.padding = "1rem";
 
         let lens = document.createElement('td');
         let selectLenses = cartItems[i].selectLenses;
         lens.innerHTML = selectLenses;
         lens.style.fontSize = "0.8rem";
-        lens.style.paddingLeft = "0.5rem";
 
         let cameraPrice = document.createElement('td');
         let price = cartItems[i].price.toFixed(2)/100;
         cameraPrice.innerHTML = `$` + price;
         cameraPrice.style.fontWeight = "550";
-        cameraPrice.style.paddingLeft = "0.5rem";
+        cameraPrice.style.padding = "1rem";
 
         tableHtml.appendChild(itemRow);
         itemRow.appendChild(imageUrl);
@@ -41,10 +41,12 @@ if (typeof(Storage) !== "cart") {
         
         let quantity = document.createElement('td');
         quantity.innerHTML = `
-        <input id="demoInput" type="number" value="1" min="1">
+        <input id="demoInput" type="number" value ="${cartItems[i].quantity}" min="1">
         `;
         //value ="${cartItems[i].quantity}"
         itemRow.appendChild(quantity);
+        quantity.style.padding = "1rem";
+
 
         let deleteBtn = document.createElement('td');
         deleteBtn.innerHTML = `<input type="button" value="Delete" data-price="100" onclick="deleteRow(this)">`;
