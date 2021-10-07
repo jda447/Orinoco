@@ -13,6 +13,7 @@ if (typeof(Storage) !== "cart") {
         imageUrl.style.height = '72%';
         imageUrl.style.width = '72%';
         imageUrl.style.marginTop = "0.5rem";
+        imageUrl.style.marginBottom = "0.5rem";
         imageUrl.style.paddingLeft = "0.5rem";
 
         let cameraName = document.createElement('td');
@@ -46,6 +47,10 @@ if (typeof(Storage) !== "cart") {
         let deleteBtn = document.createElement('td');
         deleteBtn.innerHTML = `<input type="button" value="Delete" data-price="100" onclick="deleteRow(this)">`;
         itemRow.appendChild(deleteBtn);
+        deleteBtn.style.paddingRight = "0.5rem";
+
+        itemRow.style.border = "thin solid silver";
+        itemRow.style.paddingBottom = "20px";
 
     }
 }
