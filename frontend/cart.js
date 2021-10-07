@@ -47,11 +47,10 @@ if (typeof(Storage) !== "cart") {
         itemRow.appendChild(quantity);
         quantity.style.padding = "1rem";
 
-
         let deleteBtn = document.createElement('td');
-        deleteBtn.innerHTML = `<input type="button" value="Delete" data-price="100" onclick="deleteRow(this)">`;
+        deleteBtn.innerHTML = `<input type="button" value="Delete" onclick="deleteRow(this)">`;
         itemRow.appendChild(deleteBtn);
-        deleteBtn.style.paddingRight = "0.5rem";
+        deleteBtn.style.paddingRight = "1rem";
 
         itemRow.style.border = "thin solid silver";
         itemRow.style.paddingBottom = "20px";
