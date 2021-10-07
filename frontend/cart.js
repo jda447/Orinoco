@@ -40,9 +40,11 @@ if (typeof(Storage) !== "cart") {
         itemRow.appendChild(cameraPrice);
         
         let quantity = document.createElement('td');
-        quantity.innerHTML = `<input type="quantity-input" class="col-2" value ="${cartItems[i].quantity}" type="number" value="1">`;
+        quantity.innerHTML = `
+        <input id="demoInput" type="number" value="1" min="1">
+        `;
+        //value ="${cartItems[i].quantity}"
         itemRow.appendChild(quantity);
-        quantity.style.paddingLeft = "0.5rem";
 
         let deleteBtn = document.createElement('td');
         deleteBtn.innerHTML = `<input type="button" value="Delete" data-price="100" onclick="deleteRow(this)">`;
@@ -63,3 +65,11 @@ function deleteRow(r) {
     cartItems.splice(r, 1);
     localStorage.setItem('cart', JSON.stringify(cartItems));
 }
+
+function increment() {
+    document.getElementById('demoInput').stepUp();
+ }
+
+ function decrement() {
+    document.getElementById('demoInput').stepDown();
+ }
