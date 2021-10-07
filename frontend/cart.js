@@ -57,6 +57,7 @@ if (typeof(Storage) !== "cart") {
     }
 }
 
+
 function deleteRow(r) {
     let i = r.parentNode.parentNode.rowIndex;
     document.getElementById("result").deleteRow(i);
@@ -66,10 +67,27 @@ function deleteRow(r) {
     localStorage.setItem('cart', JSON.stringify(cartItems));
 }
 
+
 function increment() {
     document.getElementById('demoInput').stepUp();
- }
+}
+
 
  function decrement() {
     document.getElementById('demoInput').stepDown();
- }
+}
+
+/* SHOWS ITEM PRICES CONSECUTIVELY IN TOTAL
+
+if (typeof(Storage) !== "cart") {
+    for (let i in cartItems) {
+
+        const totalHtml = document.getElementById('total');
+        let cameraPrice = document.createElement('p');
+        let price = cartItems[i].price.toFixed(2)/100;
+        cameraPrice.innerHTML = `$` + price;
+        totalHtml.appendChild(cameraPrice);
+    }
+}
+
+*/
