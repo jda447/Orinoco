@@ -42,14 +42,14 @@ if (typeof(Storage) !== "cart") {
         let quantity = document.createElement('td');
         quantity.innerHTML = `
             <input id="demoInput" type="number" value ="${cartItems[i].quantity}" min="1">`;
-        itemRow.appendChild(quantity);
         quantity.style.padding = "1rem";
+        itemRow.appendChild(quantity);
 
         let deleteBtn = document.createElement('td');
         deleteBtn.innerHTML = `
             <input type="button" value="Delete" onclick="deleteRow(this)">`;
-        itemRow.appendChild(deleteBtn);
         deleteBtn.style.paddingRight = "1rem";
+        itemRow.appendChild(deleteBtn);
 
         itemRow.style.border = "thin solid silver";
         itemRow.style.paddingBottom = "20px";
