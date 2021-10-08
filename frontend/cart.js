@@ -77,17 +77,22 @@ function increment() {
     document.getElementById('demoInput').stepDown();
 }
 
-/* SHOWS ITEM PRICES CONSECUTIVELY IN TOTAL
+
 
 if (typeof(Storage) !== "cart") {
     for (let i in cartItems) {
+        console.log(cartItems[i].price.toFixed(2)/100);
 
-        const totalHtml = document.getElementById('total');
+        let totalHtml = document.getElementById('total');
+        
+        let price = cartItems[i].price.toFixed(2)/100;
+        let totalPrice = price * cartItems[i].quantity;
+        totalHtml.innerHTML = "$" + totalPrice;
+
+        /*const totalHtml = document.getElementById('total');
         let cameraPrice = document.createElement('p');
         let price = cartItems[i].price.toFixed(2)/100;
         cameraPrice.innerHTML = `$` + price;
-        totalHtml.appendChild(cameraPrice);
+        totalHtml.appendChild(cameraPrice);*/
     }
 }
-
-*/
