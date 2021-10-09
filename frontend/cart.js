@@ -75,7 +75,8 @@ function totalCartPrice() {
     for (let i in cartItems) {
 
         let itemPrice = cartItems[i].price.toFixed(2)/100;
-        console.log(itemPrice);
+        let quantity = cartItems[i].quantity;
+        console.log(itemPrice, quantity);
 
         /*
         
