@@ -73,11 +73,14 @@ function increment() {
 
 function totalCartPrice() {
     for (let i in cartItems) {
-        console.log(cartItems[i].price.toFixed(2)/100);
+
+        let itemPrice = cartItems[i].price.toFixed(2)/100;
+        console.log(itemPrice);
 
         /*
         
         let totalHtml = document.getElementById('total');
+        let startPrice = 0;
         
         let price = cartItems[i].price.toFixed(2)/100;
         let totalPrice = price * cartItems[i].quantity;
@@ -90,3 +93,5 @@ function totalCartPrice() {
         totalHtml.appendChild(cameraPrice);*/
     }
 }
+totalCartPrice()
+
