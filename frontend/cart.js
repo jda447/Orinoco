@@ -63,7 +63,7 @@ function deleteRow(r) {
     document.getElementById("result").deleteRow(i);
 
     let cartItems = JSON.parse(localStorage.getItem('cart'));
-    cartItems.splice(r, 1);
+    cartItems.splice(i, 1);
     localStorage.setItem('cart', JSON.stringify(cartItems));
 }
 
