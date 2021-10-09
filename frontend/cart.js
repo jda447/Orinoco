@@ -1,60 +1,53 @@
 let cartItems = JSON.parse(localStorage.getItem('cart'));
-const tableHtml = document.getElementById('result');
+const tableHtml = document.getElementById('result');   
 
+for (let i in cartItems) {
+    console.log(cartItems[i]);
+
+    let itemRow = document.createElement("tr");
+
+    let imageUrl = document.createElement('img');
+    imageUrl.src = cartItems[i].imageUrl;
+    imageUrl.style.height = '72%';
+    imageUrl.style.width = '72%';
+    imageUrl.style.margin = "0.5rem";
+
+    let cameraName = document.createElement('td');
+    let name = cartItems[i].name;
+    cameraName.innerHTML = name;
+    cameraName.style.fontWeight = "600";
+    cameraName.style.padding = "1rem";
+
+    let lens = document.createElement('td');
+    let selectLenses = cartItems[i].selectLenses;
+    lens.innerHTML = selectLenses;
+    lens.style.fontSize = "0.8rem";
+
+    let cameraPrice = document.createElement('td');
+    let price = cartItems[i].price.toFixed(2)/100;
+    cameraPrice.innerHTML = `$` + price;
+    cameraPrice.style.fontWeight = "550";
+    cameraPrice.style.padding = "1rem";
+
+    tableHtml.appendChild(itemRow);
+    itemRow.appendChild(imageUrl);
+    itemRow.appendChild(cameraName);
+    itemRow.appendChild(lens);
+    itemRow.appendChild(cameraPrice);
     
-if (typeof(Storage) !== "cart") {
-    for (let i in cartItems) {
-        console.log(cartItems[i]);
+    let quantity = document.createElement('td');
+    quantity.innerHTML = `
+        <input id="userInput" type="number" value ="${cartItems[i].quantity}" min="1">`;
+    quantity.style.padding = "1rem";
+    itemRow.appendChild(quantity);
 
-        let itemRow = document.createElement("tr");
+    let deleteBtn = document.createElement('td');
+    deleteBtn.innerHTML = `
+        <input type="button" value="Delete" onclick="deleteRow(this)">`;
+    deleteBtn.style.paddingRight = "1rem";
+    itemRow.appendChild(deleteBtn);
 
-        let imageUrl = document.createElement('img');
-        imageUrl.src = cartItems[i].imageUrl;
-        imageUrl.style.height = '72%';
-        imageUrl.style.width = '72%';
-        imageUrl.style.marginTop = "0.5rem";
-        imageUrl.style.marginBottom = "0.5rem";
-        imageUrl.style.paddingLeft = "0.5rem";
-
-        let cameraName = document.createElement('td');
-        let name = cartItems[i].name;
-        cameraName.innerHTML = name;
-        cameraName.style.fontWeight = "600";
-        cameraName.style.padding = "1rem";
-
-        let lens = document.createElement('td');
-        let selectLenses = cartItems[i].selectLenses;
-        lens.innerHTML = selectLenses;
-        lens.style.fontSize = "0.8rem";
-
-        let cameraPrice = document.createElement('td');
-        let price = cartItems[i].price.toFixed(2)/100;
-        cameraPrice.innerHTML = `$` + price;
-        cameraPrice.style.fontWeight = "550";
-        cameraPrice.style.padding = "1rem";
-
-        tableHtml.appendChild(itemRow);
-        itemRow.appendChild(imageUrl);
-        itemRow.appendChild(cameraName);
-        itemRow.appendChild(lens);
-        itemRow.appendChild(cameraPrice);
-        
-        let quantity = document.createElement('td');
-        quantity.innerHTML = `
-            <input id="demoInput" type="number" value ="${cartItems[i].quantity}" min="1">`;
-        quantity.style.padding = "1rem";
-        itemRow.appendChild(quantity);
-
-        let deleteBtn = document.createElement('td');
-        deleteBtn.innerHTML = `
-            <input type="button" value="Delete" onclick="deleteRow(this)">`;
-        deleteBtn.style.paddingRight = "1rem";
-        itemRow.appendChild(deleteBtn);
-
-        itemRow.style.border = "thin solid silver";
-        itemRow.style.paddingBottom = "20px";
-
-    }
+    itemRow.style.border = "thin solid silver";
 }
 
 
@@ -69,20 +62,21 @@ function deleteRow(r) {
 
 
 function increment() {
-    document.getElementById('demoInput').stepUp();
+    document.getElementById('userInput').stepUp();
 }
 
 
  function decrement() {
-    document.getElementById('demoInput').stepDown();
+    document.getElementById('userInput').stepDown();
 }
 
 
-
-if (typeof(Storage) !== "cart") {
+function totalCartPrice() {
     for (let i in cartItems) {
         console.log(cartItems[i].price.toFixed(2)/100);
 
+        /*
+        
         let totalHtml = document.getElementById('total');
         
         let price = cartItems[i].price.toFixed(2)/100;
