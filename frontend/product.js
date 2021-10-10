@@ -58,8 +58,12 @@ let select = document.getElementById('lensOption');
 
 addToCart.addEventListener('click', () => {
     let cameraChoice = [];
-    let lStorageData = localStorage.getItem('cart');
-    cameraChoice = JSON.parse(lStorageData);
+    const lStorageData = localStorage.getItem('cart');
+    if (lStorageData === null) {
+      cameraChoice = [];
+    } else {
+      cameraChoice = JSON.parse(lStorageData);
+    }
 
     let cameraAdded = {
       imageUrl: product.imageUrl,
