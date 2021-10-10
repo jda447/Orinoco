@@ -78,6 +78,10 @@ function totalCartPrice() {
         let quantity = cartItems[i].quantity;
         console.log(itemPrice, quantity);
 
+        localStorage.setItem('itemPrice', itemPrice);
+        localStorage.setItem('quantity', quantity);
+        localStorage.setItem('totalCost', itemPrice * quantity);
+
         /*
         
         let totalHtml = document.getElementById('total');
