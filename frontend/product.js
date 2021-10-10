@@ -52,16 +52,15 @@ function showProduct(data) {
       }
 }
 
+
 const addToCart = document.getElementById('addToCart');
 let select = document.getElementById('lensOption');
+
 addToCart.addEventListener('click', () => {
     let cameraChoice = [];
-    const localStorageContent = localStorage.getItem('cart');
-      if (localStorageContent === null) {
-        cameraChoice = [];
-      } else {
-        cameraChoice = JSON.parse(localStorageContent);
-      }
+    let lStorageData = localStorage.getItem('cart');
+    cameraChoice = JSON.parse(lStorageData);
+
     let cameraAdded = {
       imageUrl: product.imageUrl,
       price: product.price,
