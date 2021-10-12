@@ -1,5 +1,6 @@
 let cartItems = JSON.parse(localStorage.getItem('cart'));
-const tableHtml = document.getElementById('result');   
+const tableHtml = document.getElementById('result');
+let cartNumber = document.getElementById('cartNumber');  
 
 for (let i in cartItems) {
     console.log(cartItems[i]);
@@ -69,6 +70,14 @@ function increment() {
  function decrement() {
     document.getElementById('userInput').stepDown();
 }
+
+
+function totalInCart() {
+    if (cartItems) {
+        cartNumber.innerHTML = cartItems.length;
+    }
+}
+totalInCart()
 
 
 function totalCartPrice() {

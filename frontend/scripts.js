@@ -46,11 +46,12 @@ function toggleCameras() {
 }
 
 
+let cartItems = JSON.parse(localStorage.getItem('cart'));
+let cartNumber = document.getElementById('cartNumber');
+
 function totalInCart() {
-    let cartItems = JSON.parse(localStorage.getItem('cart'));
     if (cartItems) {
-        let cartNum = document.getElementById('cartNum');
-        cartNum.innerHTML = cartItems.length;
+        cartNumber.innerHTML = cartItems.length;
     }
 }
 totalInCart()

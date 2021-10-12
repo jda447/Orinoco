@@ -80,3 +80,13 @@ addToCart.addEventListener('click', () => {
     
 })
 
+
+let cartItems = JSON.parse(localStorage.getItem('cart'));
+let cartNumber = document.getElementById('cartNumber');
+
+function totalInCart() {
+    if (cartItems) {
+        cartNumber.innerHTML = cartItems.length;
+    }
+}
+totalInCart()
