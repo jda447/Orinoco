@@ -50,6 +50,9 @@ for (let i in cartItems) {
     itemRow.appendChild(deleteBtn);
 
     itemRow.style.border = "thin solid silver";
+
+    let itemPrice = cartItems[i].price.toFixed(2)/100;
+    localStorage.setItem('cartPrice', JSON.stringify(itemPrice));
 }
 
 
