@@ -66,7 +66,7 @@ addToCart.addEventListener('click', () => {
       cameraChoice = [];
     } else {
       cameraChoice = JSON.parse(lStorageData);
-      localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
+      localStorage.setItem('cartNumber', JSON.stringify(cartItems.length + 1));
     }
 
     let cameraAdded = {
