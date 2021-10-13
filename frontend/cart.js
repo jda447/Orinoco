@@ -23,6 +23,7 @@ for (let i in cartItems) {
     let selectLenses = cartItems[i].selectLenses;
     lens.innerHTML = selectLenses;
     lens.style.fontSize = "0.8rem";
+    lens.style.padding = "1rem";
 
     let cameraPrice = document.createElement('td');
     let price = cartItems[i].price.toFixed(2)/100;
