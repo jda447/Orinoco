@@ -80,7 +80,6 @@ addToCart.addEventListener('click', () => {
 
     cameraChoice.push(cameraAdded);
     localStorage.setItem('cart', JSON.stringify(cameraChoice));
-    localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
     alert('Camera added to cart!');
     
 })
