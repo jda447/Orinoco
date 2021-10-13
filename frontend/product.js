@@ -64,11 +64,11 @@ addToCart.addEventListener('click', () => {
     const lStorageData = localStorage.getItem('cart');
     localStorage.setItem('cartNumber', 1);
     
-    if (lStorageData === null) {
-      cameraChoice = [];
-    } else {
+    if (lStorageData) {
       cameraChoice = JSON.parse(lStorageData);
       localStorage.setItem('cartNumber', JSON.stringify(cartItems.length + 1));
+    } else {
+      cameraChoice = [];
     }
 
     let cameraAdded = {
