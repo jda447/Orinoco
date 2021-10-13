@@ -88,7 +88,7 @@ function totalCartPrice() {
         for (let i in cartItems) {
             let itemPrice = cartItems[i].price.toFixed(2)/100;
             itemPrice=parseInt(itemPrice);
-            console.log('itemPrice');
+            console.log(itemPrice);
 
             let totalPrice = itemPrice * cartItems[i].quantity;
             totalPrice += startPrice;
