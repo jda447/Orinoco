@@ -76,6 +76,7 @@ function increment() {
 function totalInCart() {
     if (cartItems) {
         cartNumber.innerHTML = cartItems.length;
+        localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
     }
 }
 totalInCart()
