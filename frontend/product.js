@@ -90,3 +90,8 @@ function totalInCart() {
     }
 }
 totalInCart()
+
+/*
+    cartNumber.textContent = cartNumber++;
+    cartNumber=parseInt(cartNumber);
+*/
