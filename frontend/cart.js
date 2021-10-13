@@ -84,13 +84,21 @@ let totalHtml = document.getElementById('total');
 let startPrice = 0;
 
 function totalCartPrice() {
-    
-    
-    
+    if(cartItems){
+        for (let i in cartItems) {
+            let itemPrice = cartItems[i].price.toFixed(2)/100;
+            itemPrice=parseInt(itemPrice);
+            console.log('itemPrice');
+
+            let totalPrice = itemPrice * cartItems[i].quantity;
+            totalPrice += startPrice;
+            totalHtml.innerHTML = `$` + itemPrice;
+    }
     /*if(cartItems){
         for (let i in cartItems) {
             let itemPrice = cartItems[i].price.toFixed(2)/100;
             itemPrice=parseInt(itemPrice);
+            let totalPrice = price * cartItems[i].quantity;
             itemPrice += startPrice;
             totalHtml.innerHTML = startPrice;
             
@@ -121,4 +129,5 @@ function totalCartPrice() {
 
         */
 }
-totalCartPrice()
+}
+totalCartPrice();
