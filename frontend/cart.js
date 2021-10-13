@@ -80,9 +80,23 @@ function totalInCart() {
 totalInCart()
 
 
-function totalCartPrice() {
-    for (let i in cartItems) {
+let totalHtml = document.getElementById('total');
+let startPrice = 0;
 
+function totalCartPrice() {
+    
+    
+    
+    /*if(cartItems){
+        for (let i in cartItems) {
+            let itemPrice = cartItems[i].price.toFixed(2)/100;
+            itemPrice=parseInt(itemPrice);
+            itemPrice += startPrice;
+            totalHtml.innerHTML = startPrice;
+            
+
+    }
+        
         let itemPrice = cartItems[i].price.toFixed(2)/100;
         let quantity = cartItems[i].quantity;
         console.log(itemPrice, quantity);
@@ -91,21 +105,20 @@ function totalCartPrice() {
         localStorage.setItem('quantity', quantity);
         localStorage.setItem('totalCost', itemPrice * quantity);
 
-        /*
         
         let totalHtml = document.getElementById('total');
         let startPrice = 0;
+        let cameraPrice = document.createElement('p');
+        totalHtml.appendChild(cameraPrice);
         
         let price = cartItems[i].price.toFixed(2)/100;
         let totalPrice = price * cartItems[i].quantity;
         totalHtml.innerHTML = "$" + totalPrice;
 
-        /*const totalHtml = document.getElementById('total');
-        let cameraPrice = document.createElement('p');
-        let price = cartItems[i].price.toFixed(2)/100;
-        cameraPrice.innerHTML = `$` + price;
-        totalHtml.appendChild(cameraPrice);*/
-    }
+        function myFunction(item) {
+            startPrice += item;
+        }
+
+        */
 }
 totalCartPrice()
-
