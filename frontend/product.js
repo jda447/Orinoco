@@ -61,7 +61,7 @@ let cartNumber = document.getElementById('cartNumber');
 addToCart.addEventListener('click', () => {
     let cameraChoice = [];
     let cartItems = JSON.parse(localStorage.getItem('cart'));
-    const lStorageData = localStorage.getItem('cart');
+    let lStorageData = localStorage.getItem('cart');
     localStorage.setItem('cartNumber', 1);
     
     if (lStorageData) {
