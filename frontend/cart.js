@@ -61,6 +61,7 @@ function deleteRow(r) {
     cartItems.splice(i, 1);
     localStorage.setItem('cart', JSON.stringify(cartItems));
     localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
+    cartNumber.innerHTML = cartItems.length;
 }
 
 
