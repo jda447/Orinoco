@@ -94,25 +94,3 @@ function totalInCart() {
     }
 }
 totalInCart()
-
-
-/*
-function totalInCart() {
-  let productQty = localStorage.getItem('cartNumbers');
-
-    if (productQty) {
-        localStorage.setItem('cartNumber', productQty + 1);
-        cartNumber.textContent = productQty + 1;
-    } else {
-      localStorage.setItem('cartNumber', 1);
-      cartNumber.textContent = productQty = 1;
-    }
-}
-*/
-
-
-
-/*
-    cartNumber.textContent = cartNumber++;
-    cartNumber=parseInt(cartNumber);
-*/
