@@ -85,8 +85,10 @@ addToCart.addEventListener('click', () => {
 })
 
 
-function totalInCart(number) {
-        cartNumber.innerHTML = number;
-
+function totalInCart() {
+  if (cartItems) {
+      localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
+      cartNumber.innerHTML = cartItems.length;
+  }
 }
-totalInCart(0)
+totalInCart()
