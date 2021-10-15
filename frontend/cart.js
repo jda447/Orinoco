@@ -96,6 +96,7 @@ function totalCartPrice() {
     startPrice += totalPrice;
     localStorage.setItem('cartTotal', JSON.stringify(startPrice));
     totalHtml.innerHTML = "$" + startPrice;
+    totalHtml.style.fontSize = "1.5rem";
   }
 }
 totalCartPrice();
