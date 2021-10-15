@@ -88,9 +88,13 @@ let totalHtml = document.getElementById('total');
 let startPrice = 0;
 
 function totalCartPrice() {
-    for (let i in cartItems) {
-    localStorage.setItem('cartTotal', JSON.stringify(cartItems[i].price.toFixed(2)/100));
-    }
+    for (let i=0; i < cartItems.length; i++) {
+    let cartTotal = cartItems[i].price.toFixed(2)/100;
+    let totalPrice = cartTotal * cartItems[i].quantity;
+    startPrice += totalPrice;
+    localStorage.setItem('cartTotal', JSON.stringify(startPrice));
+    totalHtml.innerHTML = "$" + startPrice;
+  }
 }
 totalCartPrice();
 
