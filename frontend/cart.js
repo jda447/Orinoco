@@ -85,7 +85,7 @@ totalInCart()
 
 
 let totalHtml = document.getElementById('total');
-let startPrice = 0;
+let cartPrice = 0;
 
 function totalCartPrice() {
     for (let i=0; i < cartItems.length; i++) {
@@ -93,9 +93,9 @@ function totalCartPrice() {
     let quantity = cartItems[i].quantity;
     let totalPrice = cartTotal * quantity;
     
-    startPrice += totalPrice;
-    localStorage.setItem('cartTotal', JSON.stringify(startPrice));
-    totalHtml.innerHTML = "$" + startPrice;
+    cartPrice += totalPrice;
+    localStorage.setItem('cartTotal', JSON.stringify(cartPrice));
+    totalHtml.innerHTML = "$" + cartPrice;
     totalHtml.style.fontSize = "1.5rem";
   }
 }
@@ -110,7 +110,7 @@ totalCartPrice();
             console.log(itemPrice);
 
             let totalPrice = itemPrice * cartItems[i].quantity;
-            totalPrice += startPrice;
+            totalPrice += cartPrice;
             totalHtml.innerHTML = `$` + itemPrice;
     }
     /*if(cartItems){
@@ -118,8 +118,8 @@ totalCartPrice();
             let itemPrice = cartItems[i].price.toFixed(2)/100;
             itemPrice=parseInt(itemPrice);
             let totalPrice = price * cartItems[i].quantity;
-            itemPrice += startPrice;
-            totalHtml.innerHTML = startPrice;
+            itemPrice += cartPrice;
+            totalHtml.innerHTML = cartPrice;
             
 
     }
@@ -134,7 +134,7 @@ totalCartPrice();
 
         
         let totalHtml = document.getElementById('total');
-        let startPrice = 0;
+        let cartPrice = 0;
         let cameraPrice = document.createElement('p');
         totalHtml.appendChild(cameraPrice);
         
@@ -143,7 +143,7 @@ totalCartPrice();
         totalHtml.innerHTML = "$" + totalPrice;
 
         function myFunction(item) {
-            startPrice += item;
+            cartPrice += item;
         }
 
         */
