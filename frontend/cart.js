@@ -43,20 +43,23 @@ for (let i in cartItems) {
     quantity.style.padding = "1rem";
     itemRow.appendChild(quantity);
 
-    let deleteBtn = document.createElement('td');
-    deleteBtn.innerHTML = `
-        <input type="button" value="Delete" onclick="deleteRow(this)">`;
-    deleteBtn.style.paddingRight = "1rem";
-    itemRow.appendChild(deleteBtn);
+    let deleteTd = document.createElement('td');
+    let deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.setAttribute('class', 'btn btn-danger');
+    deleteBtn.addEventListener('click', () => {
+        deleteRow(itemRow, i);
+    })
+    deleteTd.style.paddingRight = "1rem";
+    itemRow.appendChild(deleteTd);
+    deleteTd.appendChild(deleteBtn);
 
     itemRow.style.border = "thin solid silver";
 }
 
 
-function deleteRow(r) {
-    let i = r.parentNode.parentNode.rowIndex;
-    document.getElementById("result").deleteRow(i);
-
+function deleteRow(r, i) {
+    r.remove();
     let cartItems = JSON.parse(localStorage.getItem('cart'));
     cartItems.splice(i, 1);
     localStorage.setItem('cart', JSON.stringify(cartItems));

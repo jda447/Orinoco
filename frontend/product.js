@@ -60,17 +60,15 @@ let cartNumber = document.getElementById('cartNumber');
 
 addToCart.addEventListener('click', () => {
     let cameraChoice = [];
-    let cartItems = JSON.parse(localStorage.getItem('cart'));
     let lStorageData = localStorage.getItem('cart');
-    localStorage.setItem('cartNumber', 1);
     
     if (lStorageData) {
       cameraChoice = JSON.parse(lStorageData);
-      localStorage.setItem('cartNumber', JSON.stringify(cartItems.length + 1));
     } else {
       cameraChoice = [];
     }
 
+    localStorage.setItem('cartNumber', JSON.stringify(cameraChoice.length + 1));
     let cameraAdded = {
       imageUrl: product.imageUrl,
       price: product.price,
@@ -83,14 +81,12 @@ addToCart.addEventListener('click', () => {
     cameraChoice.push(cameraAdded);
     localStorage.setItem('cart', JSON.stringify(cameraChoice));
     alert('Camera added to cart!');
-    cartNumber.innerHTML = cartItems.length + 1;
-    
+    totalInCart(cameraChoice.length);
 })
 
 
-function totalInCart() {
-    if (cartItems) {
-        cartNumber.innerHTML = cartItems.length;
-    }
+function totalInCart(number) {
+        cartNumber.innerHTML = number;
+
 }
-totalInCart()
+totalInCart(0)
