@@ -90,7 +90,9 @@ let startPrice = 0;
 function totalCartPrice() {
     for (let i=0; i < cartItems.length; i++) {
     let cartTotal = cartItems[i].price.toFixed(2)/100;
-    let totalPrice = cartTotal * cartItems[i].quantity;
+    let quantity = cartItems[i].quantity;
+    let totalPrice = cartTotal * quantity;
+    
     startPrice += totalPrice;
     localStorage.setItem('cartTotal', JSON.stringify(startPrice));
     totalHtml.innerHTML = "$" + startPrice;
