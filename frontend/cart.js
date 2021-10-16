@@ -6,6 +6,7 @@ for (let i in cartItems) {
     console.log(cartItems[i]);
 
     let itemRow = document.createElement("tr");
+    itemRow.style.border = "thin solid silver";
 
     let imageUrl = document.createElement('img');
     imageUrl.src = cartItems[i].imageUrl;
@@ -39,11 +40,11 @@ for (let i in cartItems) {
     
     let quantityTd = document.createElement('td');
     let input = document.createElement('input');
+    let quantity = cartItems[i].quantity;
     input.setAttribute('type', 'number');
-    input.addEventListener('change', () => {
-	product.quantity = Number.parseInt(input.value);
-	console.dir(product.quantity);
-})
+        input.addEventListener('change', () => {
+	        quantity = Number.parseInt(input.value);
+        })
     quantityTd.style.padding = "1rem";
     itemRow.appendChild(quantityTd);
     quantityTd.appendChild(input);
@@ -52,14 +53,13 @@ for (let i in cartItems) {
     let deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
     deleteBtn.setAttribute('class', 'btn btn-danger');
-    deleteBtn.addEventListener('click', () => {
-        deleteRow(itemRow, i);
-    })
+        deleteBtn.addEventListener('click', () => {
+            deleteRow(itemRow, i);
+        })
     deleteTd.style.paddingRight = "1rem";
     itemRow.appendChild(deleteTd);
     deleteTd.appendChild(deleteBtn);
 
-    itemRow.style.border = "thin solid silver";
 }
 
 
