@@ -59,12 +59,10 @@ for (let i in cartItems) {
 
 
 function deleteRow(r, i) {
-    r.remove();
-    let cartItems = JSON.parse(localStorage.getItem('cart'));
+    r.remove(r, i);
     cartItems.splice(i, 1);
     localStorage.setItem('cart', JSON.stringify(cartItems));
     localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
-    cartNumber.innerHTML = cartItems.length;
 }
 
 
@@ -79,12 +77,10 @@ function increment() {
 
 
 function totalInCart() {
-    if (cartItems) {
         localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
         cartNumber.innerHTML = cartItems.length;
-    }
 }
-totalInCart()
+totalInCart();
 
 
 let totalHtml = document.getElementById('total');
