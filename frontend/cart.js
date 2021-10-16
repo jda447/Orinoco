@@ -37,11 +37,16 @@ for (let i in cartItems) {
     itemRow.appendChild(lens);
     itemRow.appendChild(cameraPrice);
     
-    let quantity = document.createElement('td');
-    quantity.innerHTML = `
-        <input id="userInput" type="number" value ="${cartItems[i].quantity}" min="1">`;
-    quantity.style.padding = "1rem";
-    itemRow.appendChild(quantity);
+    let quantityTd = document.createElement('td');
+    let input = document.createElement('input');
+    input.setAttribute('type', 'number');
+    input.addEventListener('change', () => {
+	product.quantity = Number.parseInt(input.value);
+	console.dir(product.quantity);
+})
+    quantityTd.style.padding = "1rem";
+    itemRow.appendChild(quantityTd);
+    quantityTd.appendChild(input);
 
     let deleteTd = document.createElement('td');
     let deleteBtn = document.createElement('button');
