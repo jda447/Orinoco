@@ -65,7 +65,7 @@ for (let i in cartItems) {
 
 
 function deleteRow(r, i) {
-    r.remove(r, i);
+    r.remove(i);
     cartItems.splice(i, 1);
     localStorage.setItem('cart', JSON.stringify(cartItems));
     localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
