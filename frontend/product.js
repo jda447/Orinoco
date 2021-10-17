@@ -60,10 +60,10 @@ let cartNumber = document.getElementById('cartNumber');
 
 addToCart.addEventListener('click', () => {
     let cameraChoice = [];
-    let lStorageData = localStorage.getItem('cart');
+    let cartItems = localStorage.getItem('cart');
     
-    if (lStorageData) {
-      cameraChoice = JSON.parse(lStorageData);
+    if (cartItems) {
+      cameraChoice = JSON.parse(cartItems);
     } else {
       cameraChoice = [];
     }
