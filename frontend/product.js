@@ -68,7 +68,6 @@ addToCart.addEventListener('click', () => {
       cameraChoice = [];
     }
 
-    localStorage.setItem('cartNumber', JSON.stringify(cameraChoice.length + 1));
     let cameraAdded = {
       imageUrl: product.imageUrl,
       price: product.price,
@@ -80,8 +79,9 @@ addToCart.addEventListener('click', () => {
 
     cameraChoice.push(cameraAdded);
     localStorage.setItem('cart', JSON.stringify(cameraChoice));
+    localStorage.setItem('cartNumber', JSON.stringify(cameraChoice.length));
+    cartNumber.innerHTML = cameraChoice.length;
     alert('Camera added to cart!');
-    totalInCart(cameraChoice.length);
 })
 
 
