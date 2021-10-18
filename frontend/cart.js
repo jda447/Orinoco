@@ -70,6 +70,7 @@ function deleteRow(r, i) {
     localStorage.setItem('cart', JSON.stringify(cartItems));
     localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
     totalInCart();
+    totalCartPrice();
 }
 
 
@@ -90,20 +91,22 @@ function totalInCart() {
 totalInCart();
 
 
-let totalHtml = document.getElementById('total');
-let cartPrice = 0;
 
 function totalCartPrice() {
-    for (let i=0; i < cartItems.length; i++) {
-    let cartTotal = cartItems[i].price.toFixed(2)/100;
-    let quantity = cartItems[i].quantity;
-    let totalPrice = cartTotal * quantity;
-    
-    cartPrice += totalPrice;
-    localStorage.setItem('cartTotal', JSON.stringify(cartPrice));
-    totalHtml.innerHTML = "$" + cartPrice;
-    totalHtml.style.fontSize = "1.5rem";
-  }
+    let totalHtml = document.getElementById('total');
+    let cartPrice = 0;
+        if (cartItems) {
+            for (let i=0; i < cartItems.length; i++) {
+                let cartTotal = cartItems[i].price.toFixed(2)/100;
+                let quantity = cartItems[i].quantity;
+                let totalPrice = cartTotal * quantity;
+                
+                cartPrice += totalPrice;
+                localStorage.setItem('cartTotal', JSON.stringify(cartPrice));
+                totalHtml.innerHTML = "$" + cartPrice;
+                totalHtml.style.fontSize = "1.5rem";
+        }
+    }
 }
 totalCartPrice();
 
