@@ -43,7 +43,7 @@ for (let i in cartItems) {
     let quantity = cartItems[i].quantity;
     input.setAttribute('type', 'number');
     input.setAttribute('min', '1');
-    input.setAttribute('value', cartItems[i].quantity);
+    input.setAttribute('value', quantity);
         input.addEventListener('change', () => {
 	        quantity = Number.parseInt(input.value);
         })
