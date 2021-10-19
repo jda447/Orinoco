@@ -103,7 +103,7 @@ function totalCartPrice() {
                 let totalPrice = cartTotal * quantity;
                 cartPrice += totalPrice;
             }
-            if (total) {
+            if (totalHtml) {
                 totalHtml.innerHTML = "Total: $" + cartPrice;
                 totalHtml.style.fontSize = "1.5rem";
             }
