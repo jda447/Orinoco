@@ -65,16 +65,6 @@ for (let i in cartItems) {
 }
 
 
-function deleteRow(r, i) {
-    r.remove();
-    cartItems.splice(i, 1);
-    localStorage.setItem('cart', JSON.stringify(cartItems));
-    localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
-    totalInCart();
-    totalCartPrice();
-}
-
-
 function increment() {
     document.getElementById('userInput').stepUp();
 }
@@ -90,7 +80,6 @@ function totalInCart() {
         cartNumber.innerHTML = cartItems.length;
 }
 totalInCart();
-
 
 
 function totalCartPrice() {
@@ -110,5 +99,15 @@ function totalCartPrice() {
         }
 }
 totalCartPrice();
+
+
+function deleteRow(r, i) {
+    r.remove();
+    cartItems.splice(i, 1);
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
+    totalInCart();
+    totalCartPrice();
+}
 
     
