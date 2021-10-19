@@ -10,8 +10,8 @@ for (let i in cartItems) {
 
     let imageUrl = document.createElement('img');
     imageUrl.src = cartItems[i].imageUrl;
-    imageUrl.style.height = '72%';
-    imageUrl.style.width = '72%';
+    imageUrl.style.height = '65%';
+    imageUrl.style.width = '65%';
     imageUrl.style.margin = "0.5rem";
 
     let cameraName = document.createElement('td');
