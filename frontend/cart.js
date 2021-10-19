@@ -166,4 +166,39 @@ lastName.addEventListener('blur', () => {
       isLastNameValid = true;
     }
 })
+
+address.addEventListener('blur', () => {
+    if (address.value) {
+      address.style.border = 'green solid 1px';
+      return false;
+    }
+    else {
+      address.style.border = 'red solid 1px';
+      isAddressValid = true;
+    }
+})
+
+city.addEventListener('blur', () => {
+    const regName = /^[a-zA-Z]+$/;
+    if (!regName.test(city.value)) {
+      city.style.border = 'red solid 1px';
+      return false;
+    }
+    else {
+      city.style.border = 'green solid 1px';
+      isCityValid = true;
+    }
+})
+
+email.addEventListener('blur', () => {
+    const regName = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (!regName.test(email.value)) {
+      email.style.border = 'red solid 1px';
+      return false;
+    }
+    else {
+      email.style.border = 'green solid 1px';
+      isEmailValid = true;
+    }
+})
     
