@@ -101,13 +101,13 @@ function totalCartPrice() {
                 let cartTotal = cartItems[i].price.toFixed(2)/100;
                 let quantity = cartItems[i].quantity;
                 let totalPrice = cartTotal * quantity;
-                
                 cartPrice += totalPrice;
-                localStorage.setItem('cartTotal', JSON.stringify(cartPrice));
-                totalHtml.innerHTML = "$" + cartPrice;
+            }
+            if (total) {
+                totalHtml.innerHTML = "Total: $" + cartPrice;
                 totalHtml.style.fontSize = "1.5rem";
+            }
         }
-    }
 }
 totalCartPrice();
 
