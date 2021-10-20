@@ -131,11 +131,14 @@ let userDetails = [];
         email: document.getElementById('email').value,
     }
     userDetails.push(user);
+
     document.querySelector('form').reset();
+    localStorage.removeItem('cart');
+    localStorage.removeItem('cartNumber');
 
-    console.log('added', {userDetails});
+    console.log('userDetails', {userDetails});
 
-    localStorage.setItem('CustomerDetails', JSON.stringify(userDetails));
+    //localStorage.setItem('userDetails', JSON.stringify(userDetails));
 }
 
 document.addEventListener ('DOMContentLoaded', () => {
