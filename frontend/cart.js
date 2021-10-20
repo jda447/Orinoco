@@ -65,6 +65,20 @@ for (let i in cartItems) {
 }
 
 
+/*
+function changeQuantity(value) {
+  for (let i in cartItems) {
+  let cartItems = JSON.parse(localStorage.getItem('cart'));
+  let quantity = cartItems[i].quantity;
+  quantity = parseInt(value);
+  localStorage.setItem('cart', JSON.stringify(cartItems));
+  totalInCart();
+  totalCartPrice();
+  }
+}
+*/
+
+
 function increment() {
     document.getElementById('userInput').stepUp();
 }
