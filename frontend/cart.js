@@ -111,14 +111,7 @@ function deleteRow(r, i) {
 }
 
 
-const firstNameInput = document.getElementById('firstName');
-const lastNameInput = document.getElementById('lastName');
-const addressInput = document.getElementById('address');
-const cityInput = document.getElementById('city');
-const emailInput = document.getElementById('email');
-
 const formSubmit = document.getElementById('formSubmit');
-
 
 let userDetails = [];
     const addUserDetails = (ev) => {
