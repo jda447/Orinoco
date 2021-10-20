@@ -69,9 +69,8 @@ addToCart.addEventListener('click', () => {
     }
 
     /*
-    for(let i=0; i > cartItems; i++) {
-
-      if (product._id !== cameraAdded[i]._id && cameraAdded[i].value !== select.value) {
+    for(let i of cartItems) {
+      if (product._id === cartItems[i]._id && cartItems[i].value === select.value) {
         quantity += 1;
         cameraChoice = JSON.parse(cartItems);
       } else {
