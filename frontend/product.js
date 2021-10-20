@@ -73,7 +73,7 @@ addToCart.addEventListener('click', () => {
 
     
       if (cameraId !== cartItems[i].cameraId && cartItems[i].selectLenses !== selectLenses) {
-        cartItems[i].quantity + 1;
+        cartItems[i].quantity += 1;
         cameraChoice = JSON.parse(cartItems);
       } else {
         cameraChoice = [];
