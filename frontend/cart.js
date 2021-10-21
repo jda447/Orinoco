@@ -67,7 +67,6 @@ for (let i in cartItems) {
 /*
 function changeQuantity(value) {
   for (let i in cartItems) {
-  let cartItems = JSON.parse(localStorage.getItem('cart'));
   let quantity = cartItems[i].quantity;
   quantity = parseInt(value);
   localStorage.setItem('cart', JSON.stringify(cartItems));
@@ -89,8 +88,8 @@ function increment() {
 
 
 function totalInCart() {
-        localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
-        cartNumber.innerHTML = cartItems.length;
+    localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
+    cartNumber.innerHTML = cartItems.length;
 }
 totalInCart();
 
@@ -157,8 +156,9 @@ let userDetails = [];
 
 }
 
-document.addEventListener ('DOMContentLoaded', () => {
-document.getElementById ('formSubmit').addEventListener('click', addUserDetails);
+  document.addEventListener ('DOMContentLoaded', () => {
+  document.getElementById ('formSubmit').addEventListener('click', addUserDetails);
+
 });
 
 
