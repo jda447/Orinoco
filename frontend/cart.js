@@ -154,7 +154,7 @@ let userDetails = [];
     localStorage.removeItem('cart');
     localStorage.removeItem('cartNumber');
 
-    makeRequest(data);
+    sendData(data);
 
 }
 
@@ -163,7 +163,7 @@ let userDetails = [];
 
 });
 
-function makeRequest(data) {
+function sendData(data) {
   fetch('http://localhost:3000/api/cameras/order', {
     method: 'POST',
     headers: {
@@ -176,13 +176,11 @@ function makeRequest(data) {
     console.log(data);
 
     orderId = data.orderId;
-    sessionStorage.setItem("orderId", orderId);
+    localStorage.setItem("orderId", orderId);
 
     location.replace('order-page.html');
 
-  }).catch((err) => {
-    console.log(err);
-  })
+  }).catch((error) => console.error("FETCH ERROR:", error))
 };
 
 
