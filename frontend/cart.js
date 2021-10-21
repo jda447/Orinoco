@@ -3,7 +3,6 @@ const tableHtml = document.getElementById('result');
 let cartNumber = document.getElementById('cartNumber');  
 
 for (let i in cartItems) {
-    console.log(cartItems[i]);
 
     let itemRow = document.createElement("tr");
     itemRow.style.border = "thin solid silver";
@@ -130,6 +129,13 @@ const formSubmit = document.getElementById('formSubmit');
 let userDetails = [];
     const addUserDetails = (ev) => {
     ev.preventDefault();
+
+    let products = [];
+    let cartItems = JSON.parse(localStorage.getItem('cart'));
+    for (let i = 0; i < cartItems.length; i++) {
+      products.push(cartItems[i].prodId);
+    }
+
     let user = {
         firstName: document.getElementById('firstName').value,
         lastName: document.getElementById('lastName').value,
@@ -137,14 +143,17 @@ let userDetails = [];
         city: document.getElementById('city').value,
         email: document.getElementById('email').value,
     }
+    let data = {
+      user: user,
+      products: products,
+    }
+    console.log(data);
     userDetails.push(user);
-    console.log('userDetails', {userDetails});
 
     document.querySelector('form').reset();
     localStorage.removeItem('cart');
     localStorage.removeItem('cartNumber');
 
-    //localStorage.setItem('userDetails', JSON.stringify(userDetails));
 }
 
 document.addEventListener ('DOMContentLoaded', () => {
