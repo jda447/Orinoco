@@ -2,32 +2,33 @@
 <html>
     <html lang="en">
     <head>
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style.css">
         <script src="https://kit.fontawesome.com/87ea27cce9.js" crossorigin="anonymous"></script>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href='http://fonts.googleapis.com/css?family=Parisienne:300,400' rel='stylesheet' type='text/css'>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
-        <title>Orinoco/product/cart/order</title>
+        <title>Orinoco/product/cart</title>
     </head>
-    <body>
-        <div class="bg-dark">
-            <div class="container-fluid">
-                <div class="row">
-                  <nav class="col navbar navbar-expand bg-dark" role="navigation">
-                    <ul class="navbar-nav mr-auto pl-md-5">
-                      <a class="navbar-brand active text-light" href="index.html">Orinoco</a>
-                    </ul>
-                    <ul class="navbar-nav ml-auto pr-md-5">
-                      <a class="nav-link text-light" href="index.html">Home</a>
-                    </ul>
-                  </nav>
-                </div>
+  <body>
+
+    <div class="bg-dark">
+        <div class="container-fluid">
+            <div class="row">
+              <nav class="col navbar navbar-expand bg-dark" role="navigation">
+                <ul class="navbar-nav mr-auto pl-md-5">
+                  <a class="navbar-brand active text-light" id="navOrinoco" href="index.html">Orinoco</a>
+                </ul>
+                <ul class="navbar-nav ml-auto pr-md-5">
+                  <a class="nav-link text-light" href="index.html">Home</a>
+                  <a class="nav-link text-light" href="cart.html">Cart<i class="fas fa-shopping-basket px-2"></i>
+                  <span class="cartNum" id="cartNumber"></span></a>
+                </ul>
+              </nav>
             </div>
         </div>
-        <header>
-
-        </header>
+    </div>
         <article>
           <div class="jumbotron text-center m-0">
             <h1 class="display-3">Thank You!</h1>
@@ -43,38 +44,39 @@
             </p>
           </div>
         </article>
+        
         <footer class="bg-dark text-center text-white">
-            <div class="footer-text pt-2">
+          <div class="footer-text pt-2">
             <h3>Orinoco</h3>
-            </div>
-            <div class="container pb-3">
-              <section class="mb-1">
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                  <i class="fab fa-google"></i>
-                </a>
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+          </div>
+          <div class="container pb-3">
+            <section class="mb-1">
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-google"></i>
+              </a>
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
                 <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+              </a>
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
                 <i class="fab fa-github"></i>
-                </a>
-              </section>
-            </div>
-            <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.2);">
-              Copyright © Orinoco, Inc.
-            </div>
-          </footer>
-
-          
-
-      </body>
+              </a>
+            </section>
+          </div>
+          <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.2);">
+            Copyright © Orinoco, Inc.
+          </div>
+      </footer>
+  
+      <script src="cart.js"></script>
+            
+    </body>
   </html>
