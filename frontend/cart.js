@@ -137,11 +137,11 @@ let userDetails = [];
     }
 
     let user = {
-        firstName: document.getElementById('firstName').value,
-        lastName: document.getElementById('lastName').value,
-        address: document.getElementById('address').value,
-        city: document.getElementById('city').value,
-        email: document.getElementById('email').value,
+      firstName: document.getElementById('firstName').value,
+      lastName: document.getElementById('lastName').value,
+      address: document.getElementById('address').value,
+      city: document.getElementById('city').value,
+      email: document.getElementById('email').value,
     }
     let data = {
       user: user,
