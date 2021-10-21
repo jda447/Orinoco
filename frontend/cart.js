@@ -146,7 +146,7 @@ let userDetails = [];
     }
     let data = {
       user: user,
-      cartItems: cartItems
+      cameras: cartItems
     }
     console.log(data);
     userDetails.push(user);
