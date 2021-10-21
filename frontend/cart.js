@@ -154,12 +154,36 @@ let userDetails = [];
     localStorage.removeItem('cart');
     localStorage.removeItem('cartNumber');
 
+    makeRequest(data);
+
 }
 
   document.addEventListener ('DOMContentLoaded', () => {
   document.getElementById ('formSubmit').addEventListener('click', addUserDetails);
 
 });
+
+function makeRequest(data) {
+  fetch('http://localhost:3000/api/cameras/order', {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  }).then((response) => {
+    return response.json();
+  }).then((data) => {
+    console.log(data);
+
+    orderId = data.orderId;
+    sessionStorage.setItem("orderId", orderId);
+
+    location.replace('order-page.html');
+
+  }).catch((err) => {
+    console.log(err);
+  })
+};
 
 
 firstName.addEventListener('blur', () => {
