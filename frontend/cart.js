@@ -130,10 +130,11 @@ let userDetails = [];
     const addUserDetails = (ev) => {
     ev.preventDefault();
 
-    let products = [];
+    let cameras = [];
     let cartItems = JSON.parse(localStorage.getItem('cart'));
     for (let i = 0; i < cartItems.length; i++) {
-      products.push(cartItems[i].prodId);
+      let cameraId = cartItems[i]._id;
+      cameras.push(cameraId);
     }
 
     let user = {
@@ -145,7 +146,7 @@ let userDetails = [];
     }
     let data = {
       user: user,
-      products: products,
+      cameras: cameras,
     }
     console.log(data);
     userDetails.push(user);
