@@ -4,4 +4,6 @@ totalOrderPrice.innerHTML = "Total: $" + total;
 totalOrderPrice.style.fontSize = "1.5rem";
 
 let totalOrderId = document.getElementById('orderId');
-totalOrderId.innerHTML = localStorage.getItem('orderId');
+let iD = localStorage.getItem('orderId');
+totalOrderId.innerHTML = "Order ID - " + iD;
+totalOrderId.style.fontSize = "1.5rem";
