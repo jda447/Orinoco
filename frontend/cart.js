@@ -105,6 +105,7 @@ function totalCartPrice() {
                 cartPrice += totalPrice;
             }
             if (totalHtml) {
+                localStorage.setItem('total', JSON.stringify(cartPrice));
                 totalHtml.innerHTML = "Total: $" + cartPrice;
                 totalHtml.style.fontSize = "1.5rem";
             }
