@@ -179,7 +179,7 @@ function sendData(data) {
     orderId = data.orderId;
     localStorage.setItem("orderId", orderId);
 
-    location.replace('order-page.html');
+    location.replace('receipt.html');
 
   }).catch((error) => console.error("FETCH ERROR:", error))
 };
