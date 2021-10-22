@@ -13,107 +13,106 @@
     </head>
   <body>
 
-    <div class="bg-dark">
-        <div class="container-fluid">
-            <div class="row">
-              <nav class="col navbar navbar-expand bg-dark" role="navigation">
-                <ul class="navbar-nav mr-auto pl-md-5">
-                  <a class="navbar-brand active text-light" id="navOrinoco" href="index.html">Orinoco</a>
-                </ul>
-                <ul class="navbar-nav ml-auto pr-md-5">
-                  <a class="nav-link text-light" href="index.html">Home</a>
-                  <a class="nav-link text-light" href="cart.html">Cart<i class="fas fa-shopping-basket px-2"></i>
-                  <span class="cartNum" id="cartNumber"></span></a>
-                </ul>
-              </nav>
-            </div>
-        </div>
+  <div class="bg-dark">
+      <div class="container-fluid">
+          <div class="row">
+            <nav class="col navbar navbar-expand bg-dark" role="navigation">
+              <ul class="navbar-nav mr-auto pl-md-5">
+                <a class="navbar-brand active text-light" id="navOrinoco" href="index.html">Orinoco</a>
+              </ul>
+              <ul class="navbar-nav ml-auto pr-md-5">
+                <a class="nav-link text-light" href="index.html">Home</a>
+                <a class="nav-link text-light" href="cart.html">Cart<i class="fas fa-shopping-basket px-2"></i>
+                <span class="cartNum" id="cartNumber"></span></a>
+              </ul>
+            </nav>
+          </div>
+      </div>
+  </div>
+
+  <header>
+    <div class="col-12 col-md-12 py-4 mx-auto text-center text-dark">
+      <span class="border">
+        <h1>Vintage Cameras</h1>
+      </span>
+    </div>
+  </header>
+
+  <div class="table-responsive" id="cartItems">
+    <table class="table-responsive text-bold mx-auto col-lg-9 col-sm p-5" id="result">
+    </table>
+    <div class="total col-2 mx-auto text-center mt-1 mb-5">
+        <p class="border" id="total"></p>
+    </div>
+  </div>
+
+  <form class="col-9 mx-auto border m-5">
+    <div class="form-row mx-5 mt-5">
+      <div class="form-group col-md-6 px-3">
+        <label for="firstName">First name</label>
+        <input type="text" class="form-control" id="firstName" placeholder="First name" value="" required>
+      </div>
+      <div class="form-group col-md-6 px-3">
+        <label for="lastName">Last name</label>
+      <input type="text" class="form-control" id="lastName" placeholder="Last name" value="" required>
+      </div>
+    </div>
+    <div class="form-group mx-5 px-4">
+      <label for="address">Address</label>
+      <input type="text" class="form-control" id="address" placeholder="Address" value="" required>
+    </div>
+    <div class="form-row mx-5">
+      <div class="form-group col-md-6 px-3">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" placeholder="City" required>
+    </div>
+      <div class="form-group col-md-6 px-3">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Email" required>
+      </div>
     </div>
 
-    <header>
-      <div class="col-12 col-md-12 py-4 mx-auto text-center text-dark">
-        <span class="border">
-          <h1>Vintage Cameras</h1>
-        </span>
-      </div>
-    </header>
-
-    <div class="table-responsive" id="cartItems">
-      <table class="table-responsive text-bold mx-auto col-lg-9 col-sm p-5" id="result">
-      </table>
-      <div class="total col-2 mx-auto text-center mt-1 mb-5">
-          <p class="border" id="total"></p>
+    <div class="container my-3">
+      <div class="col-md-12 text-center">
+        <button class="btn btn-secondary text-bold mt-3 p-3" type="submit" id="formSubmit">
+          Submit form
+        </button>
       </div>
     </div>
-    
+  </form>
 
-    <form class="col-9 mx-auto border m-5">
-      <div class="form-row mx-5 mt-5">
-        <div class="form-group col-md-6 px-3">
-          <label for="firstName">First name</label>
-          <input type="text" class="form-control" id="firstName" placeholder="First name" value="" required>
+  <footer class="bg-dark text-center text-white">
+    <div class="footer-text pt-2">
+      <h3>Orinoco</h3>
         </div>
-        <div class="form-group col-md-6 px-3">
-          <label for="lastName">Last name</label>
-        <input type="text" class="form-control" id="lastName" placeholder="Last name" value="" required>
-        </div>
-      </div>
-      <div class="form-group mx-5 px-4">
-        <label for="address">Address</label>
-        <input type="text" class="form-control" id="address" placeholder="Address" value="" required>
-      </div>
-      <div class="form-row mx-5">
-        <div class="form-group col-md-6 px-3">
-          <label for="city">City</label>
-          <input type="text" class="form-control" id="city" placeholder="City" required>
-      </div>
-        <div class="form-group col-md-6 px-3">
-          <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Email" required>
-        </div>
-      </div>
-
-      <div class="container my-3">
-        <div class="col-md-12 text-center">
-          <button class="btn btn-secondary text-bold mt-3 p-3" type="submit" id="formSubmit">
-            Submit form
-          </button>
-        </div>
-      </div>
-    </form>
-
-    <footer class="bg-dark text-center text-white">
-        <div class="footer-text pt-2">
-          <h3>Orinoco</h3>
-        </div>
-        <div class="container pb-3">
-          <section class="mb-1">
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-              <i class="fab fa-google"></i>
-            </a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-              <i class="fab fa-github"></i>
-            </a>
-          </section>
-        </div>
+          <div class="container pb-3">
+            <section class="mb-1">
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-google"></i>
+              </a>
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-github"></i>
+              </a>
+            </section>
+          </div>
         <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.2);">
-          Copyright © Orinoco, Inc.
-        </div>
-    </footer>
+      Copyright © Orinoco, Inc.
+    </div>
+  </footer>
 
-    <script src="cart.js"></script>
+  <script src="cart.js"></script>
           
   </body>
 </html>
