@@ -50,17 +50,11 @@ for (let i in cartItems) {
     itemRow.appendChild(quantityTd);
     quantityTd.appendChild(input);
 
-    let deleteTd = document.createElement('td');
-    let deleteBtn = document.createElement('button');
-    deleteBtn.textContent = 'Delete';
-    deleteBtn.setAttribute('class', 'btn btn-danger');
-        deleteBtn.addEventListener('click', () => {
-            deleteRow(itemRow, i);
-        })
-    deleteTd.style.paddingRight = "1rem";
-    itemRow.appendChild(deleteTd);
-    deleteTd.appendChild(deleteBtn);
-
+    let deleteBtn = document.createElement('td');
+    deleteBtn.innerHTML = `
+        <input type="button" class="btn btn-danger" value="Delete" onclick="deleteRow(this)">`;
+    deleteBtn.style.paddingRight = "1rem";
+    itemRow.appendChild(deleteBtn);
 }
 
 
@@ -75,16 +69,6 @@ function changeQuantity(value) {
   }
 }
 */
-
-
-function increment() {
-    document.getElementById('userInput').stepUp();
-}
-
-
- function decrement() {
-    document.getElementById('userInput').stepDown();
-}
 
 
 function totalInCart() {
@@ -114,13 +98,15 @@ function totalCartPrice() {
 totalCartPrice();
 
 
-function deleteRow(r, i) {
-    r.remove();
-    cartItems.splice(i, 1);
-    localStorage.setItem('cart', JSON.stringify(cartItems));
-    localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
-    totalInCart();
-    totalCartPrice();
+function deleteRow(r) {
+  let i = r.parentNode.parentNode.rowIndex;
+  document.getElementById("result").deleteRow(i);
+  cartItems.splice(i, 1);
+  localStorage.setItem('cart', JSON.stringify(cartItems));
+  localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
+
+  totalInCart();
+  totalCartPrice();
 }
 
 
