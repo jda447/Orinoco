@@ -116,14 +116,14 @@ let userDetails = [];
     const addUserDetails = (ev) => {
     ev.preventDefault();
 
-    let cameras = [];
+    let products = [];
     let cartItems = JSON.parse(localStorage.getItem('cart'));
     for (let i = 0; i < cartItems.length; i++) {
       let cameraId = cartItems[i]._id;
-      cameras.push(cameraId);
+      products.push(cameraId);
     }
 
-    let user = {
+    let contact = {
       firstName: document.getElementById('firstName').value,
       lastName: document.getElementById('lastName').value,
       address: document.getElementById('address').value,
@@ -131,17 +131,17 @@ let userDetails = [];
       email: document.getElementById('email').value,
     }
     let data = {
-      user: user,
-      cameras: cartItems
+      contact: contact,
+      products: products
     }
     console.log(data);
-    userDetails.push(user);
+    userDetails.push(contact);
 
     document.querySelector('form').reset();
     localStorage.removeItem('cart');
     localStorage.removeItem('cartNumber');
 
-    sendData(data);
+    //sendData(data);
 
 }
 
