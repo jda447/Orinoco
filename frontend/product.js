@@ -69,10 +69,13 @@ addToCart.addEventListener('click', () => {
     }
 
     /*
-    for(let i of cartItems) {
+    for(let i = 0; i < cartItems; i++) {
       if (cartItems[i]._id === product._id && cartItems[i].value === select.value) {
-        cartItems[i].quantity += 1;
+        let cartItems = JSON.parse(localStorage.getItem('cart'));
+        cartItems[i].quantity +=1;
         localStorage.setItem('cart', JSON.stringify(cartItems));
+
+    return
     } else {
       cameraChoice = [];
       }
