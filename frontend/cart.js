@@ -111,13 +111,17 @@ function deleteRow(r) {
 
 
 const formSubmit = document.getElementById('formSubmit');
+let fName = document.getElementById('firstName');
+let lName = document.getElementById('lastName');
+let address = document.getElementById('address');
+let city = document.getElementById('city');
+let email = document.getElementById('email');
 
-let userDetails = [];
-    const addUserDetails = (ev) => {
-    ev.preventDefault();
-
+formSubmit.addEventListener('click', () => {
+    let userDetails = [];
     let products = [];
     let cartItems = JSON.parse(localStorage.getItem('cart'));
+
     for (let i = 0; i < cartItems.length; i++) {
       let cameraId = cartItems[i].cameraId;
       products.push(cameraId);
@@ -137,18 +141,45 @@ let userDetails = [];
     console.log(data);
     userDetails.push(contact);
 
+    if (fName.value == "") {
+      alert("Please enter your first name.");
+      fName.focus();
+      return false;
+    }
+    if (lName.value == "") {
+      alert("Please enter your last name.");
+      lName.focus();
+      return false;
+    }
+    if (address.value == "") {
+      alert("Please enter your address.");
+      address.focus();
+      return false;
+    }
+    if (city.value == "") {
+      alert("Please enter your city.");
+      city.focus();
+      return false;
+    }
+    if (email.value == "") {
+      alert("Please enter a valid e-mail address.");
+      email.focus();
+      return false;
+    }
+    if (email.value.indexOf("@", 0) < 0) {
+      alert("Please enter a valid e-mail address.");
+      email.focus();
+      return false;
+    } 
+
     document.querySelector('form').reset();
     localStorage.removeItem('cart');
     localStorage.removeItem('cartNumber');
+    sendData(data);
+  }
+);
 
-    //sendData(data);
 
-}
-
-  document.addEventListener ('DOMContentLoaded', () => {
-  document.getElementById ('formSubmit').addEventListener('click', addUserDetails);
-
-});
 
 function sendData(data) {
   fetch('http://localhost:3000/api/cameras/order', {
@@ -171,48 +202,3 @@ function sendData(data) {
 };
 
 
-function validateData() {
-  let fName = document.getElementById('firstName');
-  let lName = document.getElementById('lastName');
-  let address = document.getElementById('address');
-  let city = document.getElementById('city');
-  let email = document.getElementById('email');
-  if (fName.value == "") {
-    alert("Please enter your first name.");
-    fName.focus();
-    return false;
-  }
-  if (lName.value == "") {
-    alert("Please enter your last name.");
-    lName.focus();
-    return false;
-  }
-  if (address.value == "") {
-    alert("Please enter your address.");
-    address.focus();
-    return false;
-  }
-  if (city.value == "") {
-    alert("Please enter your city.");
-    city.focus();
-    return false;
-  }
-  if (email.value == "") {
-    alert("Please enter a valid e-mail address.");
-    email.focus();
-    return false;
-  }
-  if (email.value.indexOf("@", 0) < 0) {
-    alert("Please enter a valid e-mail address.");
-    email.focus();
-    return false;
-  }
-  return true;
-
-  /*
-  document.querySelector('form').reset();
-  localStorage.removeItem('cart');
-  localStorage.removeItem('cartNumber');
-  sendData(data);
-  */
-}
