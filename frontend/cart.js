@@ -171,3 +171,48 @@ function sendData(data) {
 };
 
 
+function validateData() {
+  let fName = document.getElementById('firstName');
+  let lName = document.getElementById('lastName');
+  let address = document.getElementById('address');
+  let city = document.getElementById('city');
+  let email = document.getElementById('email');
+  if (fName.value == "") {
+    alert("Please enter your first name.");
+    fName.focus();
+    return false;
+  }
+  if (lName.value == "") {
+    alert("Please enter your last name.");
+    lName.focus();
+    return false;
+  }
+  if (address.value == "") {
+    alert("Please enter your address.");
+    address.focus();
+    return false;
+  }
+  if (city.value == "") {
+    alert("Please enter your city.");
+    city.focus();
+    return false;
+  }
+  if (email.value == "") {
+    alert("Please enter a valid e-mail address.");
+    email.focus();
+    return false;
+  }
+  if (email.value.indexOf("@", 0) < 0) {
+    alert("Please enter a valid e-mail address.");
+    email.focus();
+    return false;
+  }
+  return true;
+
+  /*
+  document.querySelector('form').reset();
+  localStorage.removeItem('cart');
+  localStorage.removeItem('cartNumber');
+  sendData(data);
+  */
+}
