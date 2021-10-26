@@ -119,7 +119,7 @@ let userDetails = [];
     let products = [];
     let cartItems = JSON.parse(localStorage.getItem('cart'));
     for (let i = 0; i < cartItems.length; i++) {
-      let cameraId = cartItems[i]._id;
+      let cameraId = cartItems[i].cameraId;
       products.push(cameraId);
     }
 
