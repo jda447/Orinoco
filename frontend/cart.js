@@ -42,16 +42,16 @@ for (let i in cartItems) {
   input.setAttribute('type', 'number');
   input.setAttribute('min', '1');
   input.setAttribute('value', quantity);
-      input.addEventListener('change', () => {
-        quantity = Number.parseInt(input.value);
-      })
+    input.addEventListener('change', () => {
+      quantity = Number.parseInt(input.value);
+    })
   quantityTd.style.padding = "1rem";
   itemRow.appendChild(quantityTd);
   quantityTd.appendChild(input);
 
   let deleteBtn = document.createElement('td');
   deleteBtn.innerHTML = `
-      <input type="button" class="btn btn-danger" value="Delete" onclick="deleteRow(this)">`;
+    <input type="button" class="btn btn-danger" value="Delete" onclick="deleteRow(this)">`;
   deleteBtn.style.paddingRight = "1rem";
   itemRow.appendChild(deleteBtn);
 }
@@ -155,13 +155,13 @@ formSubmit.addEventListener('click', () => {
     city: city.value,
     email: email.value,
   }
+  userDetails.push(contact);
 
   let data = {
     contact: contact,
     products: products
   }
   console.log(data);
-  userDetails.push(contact);
 
   sendData(data);
 

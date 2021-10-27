@@ -1,55 +1,55 @@
 function getProductId() {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const id = urlParams.get('id');
-    return id;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const id = urlParams.get('id');
+  return id;
 }
 
 function getSingleProductId(id) {
-    fetch('http://localhost:3000/api/cameras/' + id)
-    .then((response) => {
-        return response.json();
-    })
-    .then(data => {
-      product = data;
-      console.log(product);
-      showProduct(data);
-    })
-    .catch((error) => console.error("FETCH ERROR:", error));
+  fetch('http://localhost:3000/api/cameras/' + id)
+  .then((response) => {
+    return response.json();
+  })
+  .then(data => {
+    product = data;
+    console.log(product);
+    showProduct(data);
+  })
+  .catch((error) => console.error("FETCH ERROR:", error));
 }
 const id = getProductId();
 getSingleProductId(id);
 
 
 function showProduct(data) {
-    let name = data.name;
-    let cameraName = document.createElement('h5');
-    cameraName.innerHTML = name;
-    nameHtml.appendChild(cameraName);
+  let name = data.name;
+  let cameraName = document.createElement('h5');
+  cameraName.innerHTML = name;
+  nameHtml.appendChild(cameraName);
 
-    let price = data.price.toFixed(2)/100;
-    let cameraPrice = document.createElement('p');
-    cameraPrice.innerHTML = `$` + price;
-    priceHtml.appendChild(cameraPrice);
+  let price = data.price.toFixed(2)/100;
+  let cameraPrice = document.createElement('p');
+  cameraPrice.innerHTML = `$` + price;
+  priceHtml.appendChild(cameraPrice);
 
-    let description = data.description;
-    let cameraDescrip = document.createElement('i');
-    cameraDescrip.innerHTML = description;
-    descriptionHtml.appendChild(cameraDescrip);
+  let description = data.description;
+  let cameraDescrip = document.createElement('i');
+  cameraDescrip.innerHTML = description;
+  descriptionHtml.appendChild(cameraDescrip);
 
-    let imageUrl = document.createElement('img');
-    image.src = data.imageUrl;
-    document.getElementById('image').appendChild(imageUrl);
-    image.innerHTML = imageUrl;
+  let imageUrl = document.createElement('img');
+  image.src = data.imageUrl;
+  document.getElementById('image').appendChild(imageUrl);
+  image.innerHTML = imageUrl;
 
-    let lenses = data.lenses;
-    let select = document.getElementById("lensOption");
+  let lenses = data.lenses;
+  let select = document.getElementById("lensOption");
 
-    for (let i in lenses) {
-        let lensChoice = document.createElement("option");
-        lensChoice.textContent = lenses[i];
-        select.appendChild(lensChoice);
-      }
+  for (let i in lenses) {
+      let lensChoice = document.createElement("option");
+      lensChoice.textContent = lenses[i];
+      select.appendChild(lensChoice);
+  }
 }
 
 
@@ -59,51 +59,51 @@ let cartItems = JSON.parse(localStorage.getItem('cart'));
 let cartNumber = document.getElementById('cartNumber');
 
 addToCart.addEventListener('click', () => {
-    let cameraChoice = [];
-    let cartItems = localStorage.getItem('cart');
-    
-    if (cartItems) {
-      cameraChoice = JSON.parse(cartItems);
-    } else {
-      cameraChoice = [];
+  let cameraChoice = [];
+  let cartItems = localStorage.getItem('cart');
+  
+  if (cartItems) {
+    cameraChoice = JSON.parse(cartItems);
+  } else {
+    cameraChoice = [];
+  }
+
+  /*
+  for(let i in cartItems) {
+    if (cartItems[i]._id == product._id && cartItems[i].value == select.value) {
+      let cartItems = JSON.parse(localStorage.getItem('cart'));
+      cartItems[i].quantity +=1;
+      localStorage.setItem('cart', JSON.stringify(cartItems));
+
+  return
+
+  } else {
+    cameraChoice = [];
     }
+  }
+  */
 
-    /*
-    for(let i in cartItems) {
-      if (cartItems[i]._id == product._id && cartItems[i].value == select.value) {
-        let cartItems = JSON.parse(localStorage.getItem('cart'));
-        cartItems[i].quantity +=1;
-        localStorage.setItem('cart', JSON.stringify(cartItems));
+  let cameraAdded = {
+    imageUrl: product.imageUrl,
+    price: product.price,
+    selectLenses: select.value,
+    name: product.name,
+    cameraId: product._id,
+    quantity: 1
+  };
 
-    return
-
-    } else {
-      cameraChoice = [];
-      }
-    }
-    */
-
-    let cameraAdded = {
-      imageUrl: product.imageUrl,
-      price: product.price,
-      selectLenses: select.value,
-      name: product.name,
-      cameraId: product._id,
-      quantity: 1
-    };
-
-    cameraChoice.push(cameraAdded);
-    localStorage.setItem('cart', JSON.stringify(cameraChoice));
-    localStorage.setItem('cartNumber', JSON.stringify(cameraChoice.length));
-    cartNumber.innerHTML = cameraChoice.length;
-    alert('Camera added to cart!');
+  cameraChoice.push(cameraAdded);
+  localStorage.setItem('cart', JSON.stringify(cameraChoice));
+  localStorage.setItem('cartNumber', JSON.stringify(cameraChoice.length));
+  cartNumber.innerHTML = cameraChoice.length;
+  alert('Camera added to cart!');
 })
 
 
 function totalInCart() {
   if (cartItems) {
-      localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
-      cartNumber.innerHTML = cartItems.length;
+    localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
+    cartNumber.innerHTML = cartItems.length;
   }
 }
 totalInCart()
