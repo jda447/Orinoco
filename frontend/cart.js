@@ -165,11 +165,11 @@ formSubmit.addEventListener('click', () => {
   }
 
   let contact = {
-    firstName: document.getElementById('firstName').value,
-    lastName: document.getElementById('lastName').value,
-    address: document.getElementById('address').value,
-    city: document.getElementById('city').value,
-    email: document.getElementById('email').value,
+    firstName: fName.value,
+    lastName: lName.value,
+    address: address.value,
+    city: city.value,
+    email: email.value,
   }
   let data = {
     contact: contact,
