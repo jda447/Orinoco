@@ -1,99 +1,85 @@
 let cartItems = JSON.parse(localStorage.getItem('cart'));
+let cartNumber = document.getElementById('cartNumber');
 const tableHtml = document.getElementById('result');
-let cartNumber = document.getElementById('cartNumber');  
 
 for (let i in cartItems) {
+  let itemRow = document.createElement("tr");
+  itemRow.style.border = "thin solid silver";
 
-    let itemRow = document.createElement("tr");
-    itemRow.style.border = "thin solid silver";
+  let imageUrl = document.createElement('img');
+  imageUrl.src = cartItems[i].imageUrl;
+  imageUrl.style.height = '65%';
+  imageUrl.style.width = '65%';
+  imageUrl.style.margin = "0.5rem";
 
-    let imageUrl = document.createElement('img');
-    imageUrl.src = cartItems[i].imageUrl;
-    imageUrl.style.height = '65%';
-    imageUrl.style.width = '65%';
-    imageUrl.style.margin = "0.5rem";
+  let cameraName = document.createElement('td');
+  let name = cartItems[i].name;
+  cameraName.innerHTML = name;
+  cameraName.style.fontWeight = "600";
+  cameraName.style.padding = "1rem";
 
-    let cameraName = document.createElement('td');
-    let name = cartItems[i].name;
-    cameraName.innerHTML = name;
-    cameraName.style.fontWeight = "600";
-    cameraName.style.padding = "1rem";
+  let lens = document.createElement('td');
+  let selectLenses = cartItems[i].selectLenses;
+  lens.innerHTML = selectLenses;
+  lens.style.fontSize = "0.8rem";
+  lens.style.padding = "1rem";
 
-    let lens = document.createElement('td');
-    let selectLenses = cartItems[i].selectLenses;
-    lens.innerHTML = selectLenses;
-    lens.style.fontSize = "0.8rem";
-    lens.style.padding = "1rem";
+  let cameraPrice = document.createElement('td');
+  let price = cartItems[i].price.toFixed(2)/100;
+  cameraPrice.innerHTML = `$` + price;
+  cameraPrice.style.fontWeight = "550";
+  cameraPrice.style.padding = "1rem";
 
-    let cameraPrice = document.createElement('td');
-    let price = cartItems[i].price.toFixed(2)/100;
-    cameraPrice.innerHTML = `$` + price;
-    cameraPrice.style.fontWeight = "550";
-    cameraPrice.style.padding = "1rem";
-
-    tableHtml.appendChild(itemRow);
-    itemRow.appendChild(imageUrl);
-    itemRow.appendChild(cameraName);
-    itemRow.appendChild(lens);
-    itemRow.appendChild(cameraPrice);
-    
-    let quantityTd = document.createElement('td');
-    let input = document.createElement('input');
-    let quantity = cartItems[i].quantity;
-    input.setAttribute('type', 'number');
-    input.setAttribute('min', '1');
-    input.setAttribute('value', quantity);
-        input.addEventListener('change', () => {
-	        quantity = Number.parseInt(input.value);
-        })
-    quantityTd.style.padding = "1rem";
-    itemRow.appendChild(quantityTd);
-    quantityTd.appendChild(input);
-
-    let deleteBtn = document.createElement('td');
-    deleteBtn.innerHTML = `
-        <input type="button" class="btn btn-danger" value="Delete" onclick="deleteRow(this)">`;
-    deleteBtn.style.paddingRight = "1rem";
-    itemRow.appendChild(deleteBtn);
-}
-
-
-/*
-function changeQuantity(value) {
-  for (let i in cartItems) {
+  tableHtml.appendChild(itemRow);
+  itemRow.appendChild(imageUrl);
+  itemRow.appendChild(cameraName);
+  itemRow.appendChild(lens);
+  itemRow.appendChild(cameraPrice);
+  
+  let quantityTd = document.createElement('td');
+  let input = document.createElement('input');
   let quantity = cartItems[i].quantity;
-  quantity = parseInt(value);
-  localStorage.setItem('cart', JSON.stringify(cartItems));
-  totalInCart();
-  totalCartPrice();
-  }
+  input.setAttribute('type', 'number');
+  input.setAttribute('min', '1');
+  input.setAttribute('value', quantity);
+      input.addEventListener('change', () => {
+        quantity = Number.parseInt(input.value);
+      })
+  quantityTd.style.padding = "1rem";
+  itemRow.appendChild(quantityTd);
+  quantityTd.appendChild(input);
+
+  let deleteBtn = document.createElement('td');
+  deleteBtn.innerHTML = `
+      <input type="button" class="btn btn-danger" value="Delete" onclick="deleteRow(this)">`;
+  deleteBtn.style.paddingRight = "1rem";
+  itemRow.appendChild(deleteBtn);
 }
-*/
 
 
 function totalInCart() {
-    localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
-    cartNumber.innerHTML = cartItems.length;
+  localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
+  cartNumber.innerHTML = cartItems.length;
 }
 totalInCart();
 
 
 function totalCartPrice() {
-    let totalHtml = document.getElementById('total');
-    let cartPrice = 0;
-        if (cartItems) {
-            for (let i=0; i < cartItems.length; i++) {
-                let cartTotal = cartItems[i].price.toFixed(2)/100;
-                let quantity = cartItems[i].quantity;
-                let totalPrice = cartTotal * quantity;
-                cartPrice += totalPrice;
-            }
-            if (totalHtml) {
-                localStorage.setItem('total', JSON.stringify(cartPrice));
-                totalHtml.innerHTML = "Total: $" + cartPrice;
-                totalHtml.style.fontSize = "1.5rem";
-            }
-        }
+  let totalHtml = document.getElementById('total');
+  let cartPrice = 0;
+    if (cartItems) {
+      for (let i=0; i < cartItems.length; i++) {
+        let cartTotal = cartItems[i].price.toFixed(2)/100;
+        let quantity = cartItems[i].quantity;
+        let totalPrice = cartTotal * quantity;
+        cartPrice += totalPrice;
+      }
+      if (totalHtml) {
+        localStorage.setItem('total', JSON.stringify(cartPrice));
+        totalHtml.innerHTML = "Total: $" + cartPrice;
+        totalHtml.style.fontSize = "1.5rem";
+      }
+    }
 }
 totalCartPrice();
 
@@ -118,7 +104,6 @@ let city = document.getElementById('city');
 let email = document.getElementById('email');
 
 formSubmit.addEventListener('click', () => {
-
   if (fName.value == "") {
     alert("Please enter your first name.");
     fName.focus();
@@ -145,19 +130,18 @@ formSubmit.addEventListener('click', () => {
     return false;
   }
   if (email.value.indexOf("@", 0) < 0) {
-    alert("Please enter a valid e-mail address.");
+    alert("Please include an '@' symbol in your e-mail address.");
     email.focus();
     return false;
   }
   if (email.value.indexOf(".", 0) < 0) {
-    alert("Please enter a valid e-mail address.");
+    alert("Please include a full-stop '.' in your e-mail address.");
     email.focus();
     return false;
   }
 
   let userDetails = [];
   let products = [];
-  let cartItems = JSON.parse(localStorage.getItem('cart'));
 
   for (let i = 0; i < cartItems.length; i++) {
     let cameraId = cartItems[i].cameraId;
@@ -171,6 +155,7 @@ formSubmit.addEventListener('click', () => {
     city: city.value,
     email: email.value,
   }
+
   let data = {
     contact: contact,
     products: products
@@ -178,10 +163,11 @@ formSubmit.addEventListener('click', () => {
   console.log(data);
   userDetails.push(contact);
 
-  document.querySelector('form').reset();
+  sendData(data);
+
   localStorage.removeItem('cart');
   localStorage.removeItem('cartNumber');
-  sendData(data);
+  document.querySelector('form').reset();
   }
 );
 
