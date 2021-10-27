@@ -118,69 +118,70 @@ let city = document.getElementById('city');
 let email = document.getElementById('email');
 
 formSubmit.addEventListener('click', () => {
-    let userDetails = [];
-    let products = [];
-    let cartItems = JSON.parse(localStorage.getItem('cart'));
 
-    for (let i = 0; i < cartItems.length; i++) {
-      let cameraId = cartItems[i].cameraId;
-      products.push(cameraId);
-    }
+  if (fName.value == "") {
+    alert("Please enter your first name.");
+    fName.focus();
+    return false;
+  }
+  if (lName.value == "") {
+    alert("Please enter your last name.");
+    lName.focus();
+    return false;
+  }
+  if (address.value == "") {
+    alert("Please enter your address.");
+    address.focus();
+    return false;
+  }
+  if (city.value == "") {
+    alert("Please enter your city.");
+    city.focus();
+    return false;
+  }
+  if (email.value == "") {
+    alert("Please enter a valid e-mail address.");
+    email.focus();
+    return false;
+  }
+  if (email.value.indexOf("@", 0) < 0) {
+    alert("Please enter a valid e-mail address.");
+    email.focus();
+    return false;
+  }
+  if (email.value.indexOf(".", 0) < 0) {
+    alert("Please enter a valid e-mail address.");
+    email.focus();
+    return false;
+  }
 
-    let contact = {
-      firstName: document.getElementById('firstName').value,
-      lastName: document.getElementById('lastName').value,
-      address: document.getElementById('address').value,
-      city: document.getElementById('city').value,
-      email: document.getElementById('email').value,
-    }
-    let data = {
-      contact: contact,
-      products: products
-    }
-    console.log(data);
-    userDetails.push(contact);
+  let userDetails = [];
+  let products = [];
+  let cartItems = JSON.parse(localStorage.getItem('cart'));
 
-    if (fName.value == "") {
-      alert("Please enter your first name.");
-      fName.focus();
-      return false;
-    }
-    if (lName.value == "") {
-      alert("Please enter your last name.");
-      lName.focus();
-      return false;
-    }
-    if (address.value == "") {
-      alert("Please enter your address.");
-      address.focus();
-      return false;
-    }
-    if (city.value == "") {
-      alert("Please enter your city.");
-      city.focus();
-      return false;
-    }
-    if (email.value == "") {
-      alert("Please enter a valid e-mail address.");
-      email.focus();
-      return false;
-    }
-    if (email.value.indexOf("@", 0) < 0) {
-      alert("Please enter a valid e-mail address.");
-      email.focus();
-      return false;
-    }
-    if (email.value.indexOf(".", 0) < 0) {
-      alert("Please enter a valid e-mail address.");
-      email.focus();
-      return false;
-    }
+  for (let i = 0; i < cartItems.length; i++) {
+    let cameraId = cartItems[i].cameraId;
+    products.push(cameraId);
+  }
 
-    document.querySelector('form').reset();
-    localStorage.removeItem('cart');
-    localStorage.removeItem('cartNumber');
-    sendData(data);
+  let contact = {
+    firstName: document.getElementById('firstName').value,
+    lastName: document.getElementById('lastName').value,
+    address: document.getElementById('address').value,
+    city: document.getElementById('city').value,
+    email: document.getElementById('email').value,
+  }
+  let data = {
+    contact: contact,
+    products: products
+  }
+  console.log(data);
+  userDetails.push(contact);
+
+  document.querySelector('form').reset();
+  localStorage.removeItem('cart');
+  localStorage.removeItem('cartNumber');
+  sendData(data);
   }
 );
 
