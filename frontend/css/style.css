@@ -7832,7 +7832,8 @@ h3, .h3 {
   .card:hover {
     transform: scale(1.04);
     transition: transform 600ms;
-    border: solid 2px #CCC; }
+    border: solid 2px #CCC;
+    background-color: #f3f6f4; }
 
 #cameraToggle a {
   text-decoration: none;
