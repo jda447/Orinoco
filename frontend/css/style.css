@@ -7826,10 +7826,6 @@ h3, .h3 {
 #productsButton {
   border-radius: 50%; }
 
-footer {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.5rem; }
-
 .card {
   display: inline-block;
   width: 24%; }
@@ -7848,31 +7844,6 @@ p {
 i {
   font-weight: 450; }
 
-.subtotal {
-  font-size: 1.5rem; }
-
-.cart-total {
-  font-size: 2.7rem; }
-
-.form {
-  display: flex;
-  justify-content: flex-end; }
-
-@media all and (max-width: 990px) {
-  .card {
-    display: block;
-    width: 75%; } }
-
-@media all and (max-width: 990px) {
-  #image {
-    display: block;
-    width: 75%; }
-  #descriptionHtml {
-    display: block;
-    width: 75%; }
-  #addToCart {
-    display: block;
-    width: 75%; }
-  #lensOption {
-    display: block;
-    width: 175%; } }
+footer {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.5rem; }
