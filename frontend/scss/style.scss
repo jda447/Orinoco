@@ -3,81 +3,82 @@
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 h1 {
-    font-family: 'Parisienne';
+  font-family: 'Parisienne';
 }
 
 h2 {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h3 {
-    font-family: 'Parisienne';
+  font-family: 'Parisienne';
 }
 
 .navbar-brand {
-    font-family: 'Parisienne';
+  font-family: 'Parisienne';
 }
 
 #navOrinoco {
-    font-family: 'Parisienne';
-    font-size: 2.5rem;
+	font-family: 'Parisienne';
+	font-size: 2.5rem;
 }
 
 #browse {
-    font-weight: 375;
+  font-weight: 375;
 }
 
 #productsButton {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 footer {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.5rem;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.5rem;
 }
 
 .card {
-    display: inline-block;
-    width: 24%;
-    &:hover {
-        transform: scale(1.04);
-        transition: transform 600ms;
-        border: solid 2px #CCC;
-    }
-        a {
-        text-decoration: none;
-        color: black;
-        }
+	display: inline-block;
+	width: 24%;
+	&:hover {
+			transform: scale(1.04);
+			transition: transform 600ms;
+			border: solid 2px #CCC;
+	}
+}
+
+#cameraToggle a {
+	text-decoration: none;
+	color: black;
 }
 
 p {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 i {
-    font-weight: 450;
+  font-weight: 450;
 }
 
 .subtotal {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .cart-total {
-    font-size: 2.7rem;
+  font-size: 2.7rem;
 }
 
 .form {
-    display: flex;
-    justify-content: flex-end;
+	display: flex;
+	justify-content: flex-end;
 }
 
 //media queries
 
 @media all and (max-width: 990px) {
-    .card {
-        display: block;
-        width: 75%;
-    }
+	.card {
+		display: block;
+		width: 75%;
+	}
 }
 
 @media all and (max-width: 990px) {

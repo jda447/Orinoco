@@ -7837,9 +7837,10 @@ footer {
     transform: scale(1.04);
     transition: transform 600ms;
     border: solid 2px #CCC; }
-  .card a {
-    text-decoration: none;
-    color: black; }
+
+#cameraToggle a {
+  text-decoration: none;
+  color: black; }
 
 p {
   font-weight: 500; }
