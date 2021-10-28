@@ -102,8 +102,39 @@ let lName = document.getElementById('lastName');
 let address = document.getElementById('address');
 let city = document.getElementById('city');
 let email = document.getElementById('email');
+const form = document.querySelector('.needs-validation')
 
-formSubmit.addEventListener('click', () => {
+form.addEventListener('submit', function (event) {
+	event.preventDefault()
+  let products = [];
+
+  for (let i = 0; i < cartItems.length; i++) {
+    let cameraId = cartItems[i].cameraId;
+    products.push(cameraId);
+  }
+
+  if (!form.checkValidity()) {
+		event.stopPropagation()
+	} else {
+		const formData = new FormData(form)
+    const data = {
+			products: products,
+			contact: {
+				firstName: formData.get('fname'),
+        lastName: formData.get('lname'),
+        address: formData.get('address'),
+        city: formData.get('city'),
+        email: formData.get('email')
+      }
+    }
+    sendData(data);
+    localStorage.removeItem('cart');
+    localStorage.removeItem('cartNumber');
+	}
+	form.classList.add('was-validated')
+}, false)
+
+  /*
   if (fName.value == "") {
     alert("Please enter your first name.");
     fName.focus();
@@ -170,7 +201,7 @@ formSubmit.addEventListener('click', () => {
   document.querySelector('form').reset();
   }
 );
-
+*/
 
 
 function sendData(data) {
