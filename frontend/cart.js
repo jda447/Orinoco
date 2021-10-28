@@ -96,22 +96,12 @@ function deleteRow(r) {
 }
 
 
-const formSubmit = document.getElementById('formSubmit');
-let fName = document.getElementById('firstName');
-let lName = document.getElementById('lastName');
-let address = document.getElementById('address');
-let city = document.getElementById('city');
-let email = document.getElementById('email');
-const form = document.querySelector('.needs-validation')
+const form = document.querySelector('.needs-validation');
 
 form.addEventListener('submit', function (event) {
 	event.preventDefault()
   let products = [];
-
-  for (let i = 0; i < cartItems.length; i++) {
-    let cameraId = cartItems[i].cameraId;
-    products.push(cameraId);
-  }
+  let contact = [];
 
   if (!form.checkValidity()) {
 		event.stopPropagation()
@@ -120,13 +110,21 @@ form.addEventListener('submit', function (event) {
     const data = {
 			products: products,
 			contact: {
-				firstName: formData.get('fname'),
-        lastName: formData.get('lname'),
+				firstName: formData.get('firstName'),
+        lastName: formData.get('lastName'),
         address: formData.get('address'),
         city: formData.get('city'),
         email: formData.get('email')
       }
     }
+    //console.log(data);
+
+    for (let i = 0; i < cartItems.length; i++) {
+      let cameraId = cartItems[i].cameraId;
+      products.push(cameraId);
+    }
+    contact.push(contact);
+
     sendData(data);
     localStorage.removeItem('cart');
     localStorage.removeItem('cartNumber');
@@ -134,76 +132,7 @@ form.addEventListener('submit', function (event) {
 	form.classList.add('was-validated')
 }, false)
 
-  /*
-  if (fName.value == "") {
-    alert("Please enter your first name.");
-    fName.focus();
-    return false;
-  }
-  if (lName.value == "") {
-    alert("Please enter your last name.");
-    lName.focus();
-    return false;
-  }
-  if (address.value == "") {
-    alert("Please enter your address.");
-    address.focus();
-    return false;
-  }
-  if (city.value == "") {
-    alert("Please enter your city.");
-    city.focus();
-    return false;
-  }
-  if (email.value == "") {
-    alert("Please enter a valid e-mail address.");
-    email.focus();
-    return false;
-  }
-  if (email.value.indexOf("@", 0) < 0) {
-    alert("Please include an '@' symbol in your e-mail address.");
-    email.focus();
-    return false;
-  }
-  if (email.value.indexOf(".", 0) < 0) {
-    alert("Please include a full-stop '.' in your e-mail address.");
-    email.focus();
-    return false;
-  }
-
-  let userDetails = [];
-  let products = [];
-
-  for (let i = 0; i < cartItems.length; i++) {
-    let cameraId = cartItems[i].cameraId;
-    products.push(cameraId);
-  }
-
-  let contact = {
-    firstName: fName.value,
-    lastName: lName.value,
-    address: address.value,
-    city: city.value,
-    email: email.value,
-  }
-  userDetails.push(contact);
-
-  let data = {
-    contact: contact,
-    products: products
-  }
-  console.log(data);
-
-  sendData(data);
-
-  localStorage.removeItem('cart');
-  localStorage.removeItem('cartNumber');
-  document.querySelector('form').reset();
-  }
-);
-*/
-
-
+ 
 function sendData(data) {
   fetch('http://localhost:3000/api/cameras/order', {
     method: 'POST',
