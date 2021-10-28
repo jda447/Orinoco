@@ -88,9 +88,9 @@ function deleteRow(r) {
   let i = r.parentNode.parentNode.rowIndex;
   document.getElementById("result").deleteRow(i);
   cartItems.splice(i, 1);
+
   localStorage.setItem('cart', JSON.stringify(cartItems));
   localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
-
   totalInCart();
   totalCartPrice();
 }
@@ -117,13 +117,12 @@ form.addEventListener('submit', function (event) {
         email: formData.get('email')
       }
     }
-    //console.log(data);
+    contact.push(contact);
 
     for (let i = 0; i < cartItems.length; i++) {
       let cameraId = cartItems[i].cameraId;
       products.push(cameraId);
     }
-    contact.push(contact);
 
     sendData(data);
     localStorage.removeItem('cart');
