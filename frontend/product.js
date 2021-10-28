@@ -70,17 +70,36 @@ addToCart.addEventListener('click', () => {
 
   /*
   for(let i in cartItems) {
-    if (cartItems[i]._id == product._id && cartItems[i].value == select.value) {
+    if (cartItems[i]._id === product._id && cartItems[i].value === select.value) {
       let cartItems = JSON.parse(localStorage.getItem('cart'));
-      cartItems[i].quantity +=1;
+      cartItems[i].quantity += 1;
       localStorage.setItem('cart', JSON.stringify(cartItems));
-
-  return
-
-  } else {
-    cameraChoice = [];
+    return
+    } else {
+      cameraChoice = [];
+      }
     }
-  }
+  */
+
+  /*
+  let savedProducts = JSON.parse(localStorage.getItem("cart")) || [];
+  if (cameraChoice.length === 0) {
+    cameraChoice.push(cameraAdded);
+    localStorage.setItem('cart', JSON.stringify(cameraAdded));
+  } else {
+    for (let i = 0; i < savedProducts.length; i++) {
+      if (JSON.parse(cartItems).name === savedProducts[i].name) {
+        savedProducts[i].count++;
+        //alert(`Found Duplicate at position ${i}. Not inserting again  ${productInfo}`)
+        alert(`${JSON.parse(productInfo).name} already exists`);
+      } else if (i == savedProducts.length - 1) {
+        savedProducts.push(JSON.parse(cameraAdded));
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        return;
+        }
+      }
+    }
+  })
   */
 
   let cameraAdded = {
