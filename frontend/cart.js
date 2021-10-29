@@ -120,8 +120,8 @@ form.addEventListener('submit', function (event) {
     contact.push(contact);
 
     for (let i = 0; i < cartItems.length; i++) {
-      let cameraId = cartItems[i].cameraId;
-      products.push(cameraId);
+      let _id = cartItems[i]._id;
+      products.push(_id);
     }
 
     sendData(data);
