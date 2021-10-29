@@ -50,6 +50,35 @@ function showProduct(data) {
       lensChoice.textContent = lenses[i];
       select.appendChild(lensChoice);
   }
+  const addToCart = document.getElementById('addToCart');
+  addToCart.addEventListener('click', () => {
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartNumber = document.getElementById('cartNumber');
+    
+    for(let i in cartItems) { 
+      if (cartItems[i]._id === data._id && cartItems[i].lenses === select.value) {
+        cartItems[i].quantity += 1;
+        console.log(cartItems[i]);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        return 
+      }
+    }
+  
+    let cameraAdded = {
+      imageUrl: data.imageUrl,
+      price: data.price,
+      lenses: select.value,
+      name: data.name,
+      _id: data._id,
+      quantity: 1
+    };
+    
+    cartItems.push(cameraAdded);
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
+    cartNumber.innerHTML = cartItems.length;
+    alert('Camera added to cart!');
+  })
 }
 
 
@@ -58,6 +87,7 @@ let select = document.getElementById('lensOption');
 let cartItems = JSON.parse(localStorage.getItem('cart'));
 let cartNumber = document.getElementById('cartNumber');
 
+/*
 addToCart.addEventListener('click', () => {
   let cameraChoice = [];
   let cartItems = localStorage.getItem('cart');
@@ -83,6 +113,7 @@ addToCart.addEventListener('click', () => {
   cartNumber.innerHTML = cameraChoice.length;
   alert('Camera added to cart!');
 })
+*/
 
 
 function totalInCart() {
@@ -95,35 +126,4 @@ totalInCart()
 
 
 
-/* Quantity attempt
-addToCart.addEventListener('click', () => {
-  let cameraChoice = [];
-  let cartItems = JSON.parse(localStorage.getItem('cart'));
 
-    let cameraAdded = {
-    imageUrl: product.imageUrl,
-    price: product.price,
-    selectLenses: select.value,
-    name: product.name,
-    cameraId: product._id,
-    quantity: 1
-  };
-  
-    for(let i in cartItems) { 
-      if (cartItems[i]._id === product._id && cartItems[i].value === select.value) {
-        cartItems[i].quantity += 1;
-        localStorage.setItem('cart', JSON.stringify(cartItems));
-      return
-      } else {
-        cameraChoice = [];
-      }
-    }
-  
-  cartItems.push(cameraAdded);
-  cameraChoice.push(cameraAdded);
-  localStorage.setItem('cart', JSON.stringify(cameraChoice));
-  localStorage.setItem('cartNumber', JSON.stringify(cameraChoice.length));
-  cartNumber.innerHTML = cameraChoice.length;
-  alert('Camera added to cart!');
-})
-*/
