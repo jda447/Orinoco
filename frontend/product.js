@@ -60,6 +60,9 @@ function showProduct(data) {
         cartItems[i].quantity += 1;
         console.log(cartItems[i]);
         localStorage.setItem('cart', JSON.stringify(cartItems));
+        localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
+        cartNumber.innerHTML = cartItems.length;
+        alert('Camera added to cart!');
         return 
       }
     }
