@@ -109,19 +109,17 @@ addToCart.addEventListener('click', () => {
     quantity: 1
   };
   
-    for(let i in cartItems) {
-      let cartItems = JSON.parse(localStorage.getItem('cart'));
-      
+    for(let i in cartItems) { 
       if (cartItems[i]._id === product._id && cartItems[i].value === select.value) {
-        let quantity = cartItems[i].quantity;
-        quantity += 1;
+        cartItems[i].quantity += 1;
         localStorage.setItem('cart', JSON.stringify(cartItems));
-      return cameraChoice[i].quantity;
+      return
       } else {
         cameraChoice = [];
       }
     }
-
+  
+  cartItems.push(cameraAdded);
   cameraChoice.push(cameraAdded);
   localStorage.setItem('cart', JSON.stringify(cameraChoice));
   localStorage.setItem('cartNumber', JSON.stringify(cameraChoice.length));
