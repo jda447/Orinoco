@@ -5,6 +5,7 @@ function getProductId() {
   return id;
 }
 
+
 function getSingleProductId(id) {
   fetch('http://localhost:3000/api/cameras/' + id)
   .then((response) => {
@@ -83,40 +84,6 @@ function showProduct(data) {
     alert('Camera added to cart!');
   })
 }
-
-
-const addToCart = document.getElementById('addToCart');
-let select = document.getElementById('lensOption');
-let cartItems = JSON.parse(localStorage.getItem('cart'));
-let cartNumber = document.getElementById('cartNumber');
-
-/*
-addToCart.addEventListener('click', () => {
-  let cameraChoice = [];
-  let cartItems = localStorage.getItem('cart');
-  
-  if (cartItems) {
-    cameraChoice = JSON.parse(cartItems);
-  } else {
-    cameraChoice = [];
-  }
-
-  let cameraAdded = {
-    imageUrl: product.imageUrl,
-    price: product.price,
-    selectLenses: select.value,
-    name: product.name,
-    cameraId: product._id,
-    quantity: 1
-  };
-
-  cameraChoice.push(cameraAdded);
-  localStorage.setItem('cart', JSON.stringify(cameraChoice));
-  localStorage.setItem('cartNumber', JSON.stringify(cameraChoice.length));
-  cartNumber.innerHTML = cameraChoice.length;
-  alert('Camera added to cart!');
-})
-*/
 
 
 function totalInCart() {
