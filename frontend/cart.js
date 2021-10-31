@@ -1,5 +1,4 @@
 let cartItems = JSON.parse(localStorage.getItem('cart'));
-let cartNumber = document.getElementById('cartNumber');
 const tableHtml = document.getElementById('result');
 
 for (let i in cartItems) {
@@ -57,13 +56,6 @@ for (let i in cartItems) {
 }
 
 
-function totalInCart() {
-  let cartNumberStorage = JSON.parse(localStorage.getItem('cartNumber'));
-  cartNumber.innerHTML = cartNumberStorage;
-}
-totalInCart();
-
-
 function totalCartPrice() {
   let totalHtml = document.getElementById('total');
   let cartPrice = 0;
@@ -90,8 +82,6 @@ function deleteRow(r) {
   cartItems.splice(i, 1);
 
   localStorage.setItem('cart', JSON.stringify(cartItems));
-  localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
-  totalInCart();
   totalCartPrice();
 }
 
@@ -126,7 +116,6 @@ form.addEventListener('submit', function (event) {
 
     sendData(data);
     localStorage.removeItem('cart');
-    localStorage.removeItem('cartNumber');
 	}
 	form.classList.add('was-validated')
 }, false)

@@ -42,13 +42,3 @@ function toggleCameras() {
 		cameras.style.display = "none";
 		}
 }
-
-
-let cartItems = JSON.parse(localStorage.getItem('cart'));
-let cartNumber = document.getElementById('cartNumber');
-
-function totalInCart() {
-  let cartNumberStorage = JSON.parse(localStorage.getItem('cartNumber'));
-  cartNumber.innerHTML = cartNumberStorage;
-}
-totalInCart()
