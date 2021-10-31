@@ -58,8 +58,8 @@ for (let i in cartItems) {
 
 
 function totalInCart() {
-  localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
-  cartNumber.innerHTML = cartItems.length;
+  let cartNumberStorage = JSON.parse(localStorage.getItem('cartNumber'));
+  cartNumber.innerHTML = cartNumberStorage;
 }
 totalInCart();
 

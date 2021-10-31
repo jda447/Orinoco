@@ -55,14 +55,14 @@ function showProduct(data) {
   addToCart.addEventListener('click', () => {
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     let cartNumber = document.getElementById('cartNumber');
-    cartNumber.innerHTML++;
+    cartNumber.innerHTML += 1;
     
     for(let i in cartItems) { 
       if (cartItems[i]._id === data._id && cartItems[i].lenses === select.value) {
         cartItems[i].quantity += 1;
         console.log(cartItems[i]);
         localStorage.setItem('cart', JSON.stringify(cartItems));
-        localStorage.setItem('cartNumber', JSON.stringify(cartNumber));
+        localStorage.setItem('cartNumber', JSON.stringify(cartItems[i].quantity));
         cartNumber.innerHTML = cartItems[i].quantity;
         alert('Camera added to cart!');
         return 
@@ -80,19 +80,16 @@ function showProduct(data) {
     
     cartItems.push(cameraAdded);
     localStorage.setItem('cart', JSON.stringify(cartItems));
-    localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
-    cartNumber.innerHTML = cartItems.length;
+    let cartNumberStorage = JSON.parse(localStorage.getItem('cartNumber'));
+    cartNumber.innerHTML = cartNumberStorage;
     alert('Camera added to cart!');
   })
 }
 
 
 function totalInCart() {
-  let cartItems = JSON.parse(localStorage.getItem('cart'));
-  if (cartItems) {
-    localStorage.setItem('cartNumber', JSON.stringify(cartItems.length));
-    cartNumber.innerHTML = cartItems.length;
-  }
+  let cartNumberStorage = JSON.parse(localStorage.getItem('cartNumber'));
+  cartNumber.innerHTML = cartNumberStorage;
 }
 totalInCart()
 
