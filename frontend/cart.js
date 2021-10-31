@@ -19,8 +19,8 @@ for (let i in cartItems) {
   cameraName.style.padding = "1rem";
 
   let lens = document.createElement('td');
-  let selectLenses = cartItems[i].selectLenses;
-  lens.innerHTML = selectLenses;
+  let lenses = cartItems[i].lenses;
+  lens.innerHTML = lenses;
   lens.style.fontSize = "0.8rem";
   lens.style.padding = "1rem";
 
