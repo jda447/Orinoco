@@ -1,4 +1,4 @@
-4 - JavaScript frontend
+4 - E-Commerce JavaScript (frontend)
 
 https://jda447.github.io/Orinoco/
 
