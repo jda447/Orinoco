@@ -1,4 +1,4 @@
-4 - JavaScript
+4 - JavaScript frontend
 
 https://jda447.github.io/Orinoco/
 
