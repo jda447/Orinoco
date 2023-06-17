@@ -2,22 +2,6 @@
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
-h1 {
-  font-family: 'Parisienne';
-}
-
-h2 {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-h3 {
-  font-family: 'Parisienne';
-}
-
-.navbar-brand {
-  font-family: 'Parisienne';
-}
-
 #navOrinoco {
 	font-family: 'Parisienne';
 	font-size: 2.5rem;
@@ -35,10 +19,10 @@ h3 {
 	display: inline-block;
 	width: 24%;
 	&:hover {
-			transform: scale(1.04);
-			transition: transform 600ms;
-			border: solid 2px #CCC;
-			background-color: #f3f6f4;
+    transform: scale(1.04);
+    transition: transform 600ms;
+    border: solid 2px #CCC;
+    background-color: #f3f6f4;
 	}
 }
 
@@ -64,7 +48,9 @@ footer {
 @media all and (max-width: 1024px) {
   .card {
     display: block;
-    width: 75%; } }
+    width: 75%;
+  }
+}
 
 @media all and (max-width: 1024px) {
   #image {
