@@ -1,4 +1,4 @@
-Project 4 - E-Commerce JavaScript (frontend)
+Project 4 - E-Commerce, JavaScript (frontend)
  
 Orinoco
 
